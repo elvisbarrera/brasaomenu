@@ -1,0 +1,407 @@
+/* PAIRING SECTION STYLES */
+.pairing-section {
+    background: linear-gradient(135deg, #1f2429 0%, #181C1F 100%);
+    border: 1px solid rgba(197, 160, 89, 0.2);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.pairing-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #C5A059, transparent);
+    opacity: 0.8;
+}
+
+.pairing-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.pairing-title {
+    font-family: "Libre Caslon Display", serif;
+    color: #C5A059;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+}
+
+.pairing-subtitle {
+    font-family: "Montserrat", sans-serif;
+    color: #B0B3B8;
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+
+
+.instruction-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    background: transparent;
+    /* Removed background */
+    border: none;
+    /* Removed border */
+    border-radius: 0;
+    padding: 0;
+    margin: 1rem auto 0;
+    width: 100%;
+    /* Removed shadow */
+}
+
+.mobile-swipe-legend {
+    display: none;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.75rem;
+    color: #C5A059;
+    text-align: center;
+    margin-top: 1rem;
+    opacity: 0.8;
+    animation: pulseHint 3s infinite;
+}
+
+.instruction-step {
+    display: flex;
+    align-items: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.8rem;
+    color: #FFFCF1;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    /* Bolder text now that numbers are gone */
+}
+
+/* Icons between steps */
+.instruction-icon {
+    color: #C5A059;
+    font-size: 0.7rem;
+    opacity: 0.6;
+}
+
+/* Default Desktop Grid (Vertical Columns) */
+.pairing-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr;
+    gap: 1.5rem;
+    align-items: stretch;
+}
+
+/* Scroll Container (Desktop defaults) */
+.pairing-scroll-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    max-height: 480px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+/* Custom Scrollbar for Desktop */
+.pairing-scroll-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.pairing-scroll-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 3px;
+}
+
+.pairing-scroll-container::-webkit-scrollbar-thumb {
+    background: #C5A059;
+    border-radius: 3px;
+    opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+    .mobile-swipe-legend {
+        display: block;
+    }
+
+    .pairing-section {
+        padding: 1rem 0;
+        /* Full width feel */
+        border-right: none;
+        border-left: none;
+        border-radius: 0;
+    }
+
+    .pairing-header {
+        padding: 0 1rem;
+    }
+
+    .pairing-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        /* Tighter gap between sections */
+    }
+
+    /* NETFLIX STYLE HORIZONTAL SCROLL */
+    .pairing-col {
+        width: 100%;
+        overflow: hidden;
+        /* Hide overflow from container */
+    }
+
+    .col-title {
+        text-align: left;
+        margin-left: 1rem;
+        font-size: 0.9rem;
+        margin-bottom: 0.3rem;
+        opacity: 0.9;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .swipe-hint {
+        display: inline-block;
+        font-size: 0.6rem;
+        text-transform: none;
+        letter-spacing: normal;
+        color: #C5A059;
+        background: rgba(197, 160, 89, 0.1);
+        padding: 2px 8px;
+        border-radius: 10px;
+        animation: pulseHint 2s infinite;
+    }
+
+    @keyframes pulseHint {
+
+        0%,
+        100% {
+            opacity: 0.6;
+        }
+
+        50% {
+            opacity: 1;
+        }
+    }
+
+    .pairing-scroll-container {
+        flex-direction: row;
+        overflow-x: auto;
+        overflow-y: visible;
+        /* changed from hidden to visible or just ensure padding covers it */
+        gap: 0.8rem;
+        padding: 0.8rem 1rem;
+        /* Added top padding */
+        /* Reduced bottom padding */
+        max-height: none;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        /* Hide scrollbar Firefox */
+    }
+
+    .pairing-scroll-container::-webkit-scrollbar {
+        display: none;
+        /* Hide scrollbar Chrome/Safari */
+    }
+
+    .pairing-btn {
+        flex: 0 0 140px;
+        /* More compact width */
+        min-height: 65px;
+        /* Shorter height */
+        padding: 0.4rem;
+        gap: 2px;
+        /* Tighter gap */
+        scroll-snap-align: center;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        margin-right: 0;
+    }
+
+    /* Mobile Text Tweaks */
+    .pairing-btn .item-name {
+        font-size: 0.9rem;
+        line-height: 1;
+        margin-bottom: 2px;
+    }
+
+    .pairing-btn .item-desc {
+        font-size: 0.6rem;
+        line-height: 1.1;
+        opacity: 0.8;
+    }
+
+    /* Active State tweaks for horizontal cards */
+    .pairing-btn.active {
+        transform: scale(1.05);
+        background: rgba(197, 160, 89, 0.2);
+        border-color: #C5A059;
+    }
+
+    .pairing-result-card {
+        margin: 0 1rem;
+        min-height: 200px;
+    }
+
+    /* Order: Meat -> Result -> Wine */
+    /* By default flex column does Meat(1) -> Result(2) -> Wine(3) because of DOM order. */
+    /* If we want Meat -> Wine -> Result, we can use order: */
+    #meat-section {
+        order: 1;
+    }
+
+    #wine-section {
+        order: 2;
+    }
+
+    .pairing-result-card {
+        order: 3;
+        margin-top: 1rem;
+    }
+}
+
+.item-desc {
+    font-size: 0.7rem;
+    line-height: 1.2;
+}
+
+.col-title {
+    font-family: "Montserrat", sans-serif;
+    color: #FFFCF1;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    opacity: 0.8;
+}
+
+.swipe-hint {
+    display: none;
+    /* Hidden on desktop */
+}
+
+
+.pairing-btn {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pairing-btn:hover {
+    background: rgba(197, 160, 89, 0.1);
+    border-color: rgba(197, 160, 89, 0.4);
+    transform: translateX(5px);
+}
+
+.pairing-btn.active {
+    background: rgba(197, 160, 89, 0.15);
+    border-color: #C5A059;
+    box-shadow: 0 0 15px rgba(197, 160, 89, 0.1);
+}
+
+.item-name {
+    font-family: "Libre Caslon Display", serif;
+    color: #FFFCF1;
+    font-size: 1.1rem;
+}
+
+.item-desc {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.75rem;
+    color: #888;
+}
+
+/* RESULT CARD */
+.pairing-result-card {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    padding: 1.5rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: all 0.5s ease;
+}
+
+.result-placeholder {
+    color: #666;
+    font-style: italic;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.9rem;
+}
+
+.result-content {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.match-score {
+    font-family: "Libre Caslon Display", serif;
+    font-size: 2.5rem;
+    color: #C5A059;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 10px rgba(197, 160, 89, 0.3);
+}
+
+.match-label {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    margin-bottom: 1.5rem;
+    color: #FFFCF1;
+}
+
+.flavor-profile {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.flavor-tag {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    border: 1px solid rgba(197, 160, 89, 0.2);
+    color: #C5A059;
+}
+
+.description-text {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #B0B3B8;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

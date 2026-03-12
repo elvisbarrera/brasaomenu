@@ -1,0 +1,624 @@
+body {
+	margin: 0 auto;
+	box-sizing: border-box;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 300;
+	background-color: #181C1F;
+	background-image: linear-gradient(to right, #171b22 0%, #181C1F 50%, #222830 100%);
+	background-attachment: fixed;
+	color: #FFFCF1;
+}
+
+
+.adorno {
+	text-align: center
+}
+
+.title {
+	text-align: center;
+	padding-top: 1rem;
+	margin-bottom: 35px;
+}
+
+
+ul.list {
+	padding: 0;
+}
+
+ul.list a {
+	padding: 6px;
+
+}
+
+.list-2 {
+	margin: 30px 10px 10px 10px;
+}
+
+.wine {
+	margin-top: -15px;
+}
+
+.invisible-section {
+	display: none;
+}
+
+#desserts {
+	margin-top: -3rem;
+	padding: 0 1.5rem 0 1.5rem;
+}
+
+#desserts > div {
+	display: flex;
+	flex-direction: column;
+}
+
+#desserts > div::after {
+	content: "";
+	display: block;
+	width: 60%;
+	height: 1px;
+	background: linear-gradient(to right, transparent, #C5A059, transparent);
+	margin: 1.5rem auto 0;
+	opacity: 0.5;
+	order: 2;
+}
+
+#desserts img {
+	display: block;
+	width: 220px;
+	aspect-ratio: 4 / 5;
+	object-fit: cover;
+	border-radius: 5px;
+	margin: 0 auto;
+	order: 1;
+}
+
+#desserts > div:not(.center-dessert) img {
+	margin-top: -20px;
+}
+
+.dessert-name {
+	font-family: "Libre Caslon Display", serif;
+	font-style: normal;
+	font-size: 20px;
+	color: #FFFCF1;
+	display: flex;
+	align-items: baseline;
+	margin-bottom: -15px;
+}
+
+.dessert-name::after {
+	content: "";
+	flex-grow: 1;
+	border-bottom: 2px dotted #C5A059;
+	margin-left: 10px;
+	opacity: 0.6;
+	order: 1;
+}
+
+.dessert-name span {
+	order: 2;
+	margin-left: 10px;
+	white-space: nowrap;
+	font-family: "Montserrat", sans-serif;
+	font-weight: 600;
+	font-size: 15px;
+	color: #C5A059;
+	flex-shrink: 0;
+}
+
+#wines {
+	text-align: center;
+	color: #FFFCF1;
+}
+
+
+
+#cocktails {
+	margin-top: -3rem;
+}
+
+
+/* removed duplicate width rule; main styling defined further below */
+
+
+
+span {
+	float: right;
+}
+
+#reviews {
+	margin-top: -6rem;
+	width: 100%;
+	text-align: center;
+	font-family: "Assistant", sans-serif;
+	;
+}
+
+
+.cocktail-name {
+	font-family: "Libre Caslon Display", serif;
+	font-weight: 400;
+	margin-top: 20px;
+	font-size: 20px;
+	color: #FFFCF1;
+	display: flex;
+	align-items: baseline;
+}
+
+.cocktail-name::after {
+	content: "";
+	flex-grow: 1;
+	border-bottom: 2px dotted #C5A059;
+	margin-left: 10px;
+	opacity: 0.6;
+	order: 1;
+}
+
+hr {
+	border: 1px solid #333;
+	opacity: 0.3;
+}
+
+
+
+.drink-container {
+	display: flex;
+	justify-content: space-between;
+	text-align: left;
+	margin-top: -15px;
+	align-items: flex-start;
+}
+
+.cocktail {
+	flex-grow: 1;
+	margin-right: 15px;
+}
+
+
+
+.cocktail-description {
+	font-family: "Montserrat", sans-serif;
+	padding-right: 20px;
+	margin-top: -7px;
+	font-size: 13px;
+	font-weight: 300;
+	color: #B0B3B8;
+	line-height: 1.6;
+}
+
+
+.drink-description {
+	font-family: "Montserrat", sans-serif;
+	padding-left: 13px;
+	margin-top: -12px;
+	font-size: 13px;
+	font-weight: 300;
+	color: #B0B3B8;
+	line-height: 1.6;
+}
+
+
+
+.vino-description {
+	font-family: "Montserrat", sans-serif;
+	margin-top: -10px;
+	font-size: 13px;
+	font-weight: 400;
+	color: #B0B3B8;
+}
+
+
+
+
+.dessert-description {
+	font-family: "Montserrat", sans-serif;
+	margin-top: -4px;
+	font-size: 13px;
+	font-weight: 400;
+	color: #B0B3B8;
+	line-height: 1.6;
+	width: 100%;
+}
+
+
+.price {
+	display: flex;
+	font-weight: 600;
+	margin-top: 20px;
+	font-size: 15px;
+	font-family: "Montserrat", sans-serif;
+	color: #C5A059;
+	flex-shrink: 0;
+}
+
+.main-menu {
+	display: flex;
+	justify-content: center;
+}
+
+.no-margin a {
+	margin: 0;
+	padding: 0;
+}
+
+
+
+.tabs.is-toggle li.is-active a {
+	background-color: #C5A059;
+	border-color: #C5A059;
+	color: #181C1F;
+	border-radius: 0px !important;
+}
+
+.tabs.is-toggle a {
+	border-radius: 0px !important;
+	border-color: #333;
+	background-color: #181C1F;
+	color: #FFFCF1;
+	transition: all 0.3s ease;
+}
+
+.tabs.is-toggle a:hover {
+	background-color: #2C3136;
+	border-color: #C5A059;
+	color: #C5A059;
+}
+
+.tabs.is-toggle li.is-active {
+	border-radius: 0px !important;
+}
+
+.last-footer {
+	text-align: center;
+	padding: 1rem;
+	background-color: #000000;
+	color: #888;
+	font-size: 0.8rem;
+}
+
+
+
+
+h6 {
+	padding-left: 7px;
+	color: #C5A059;
+}
+
+
+.wine {
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: row;
+	margin-top: 20px;
+	flex-grow: 1;
+	margin-right: 15px;
+}
+
+.wine-container {
+	display: flex;
+	justify-content: space-between;
+	margin-top: -15px;
+}
+
+.wine-name {
+	font-family: "Libre Caslon Display", serif;
+	font-weight: 600;
+	text-align: left;
+	font-size: 18px;
+	letter-spacing: 0.5px;
+	display: flex;
+	align-items: baseline;
+	flex-grow: 1;
+}
+
+.wine-name::after {
+	content: "";
+	flex-grow: 1;
+	border-bottom: 2px dotted #C5A059;
+	margin-left: 10px;
+	opacity: 0.6;
+	order: 1;
+}
+
+
+.wine-description {
+	font-family: "Montserrat", sans-serif;
+	padding-left: 12px;
+	margin-top: -22px;
+	font-size: 13px;
+	font-weight: 400;
+	text-align: left;
+	width: 75%;
+	color: #B0B3B8;
+}
+
+.wine_code {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 600;
+	color: #C5A059;
+	padding-right: 6px;
+	font-size: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+.cocktail-images {
+	padding-left: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: -5px auto 30px;
+	width: 100%;
+	max-width: 290px;
+}
+
+.cocktail-images::after {
+	content: "";
+	display: block;
+	width: 60%;
+	height: 1px;
+	background: linear-gradient(to right, transparent, #C5A059, transparent);
+	margin: 1.5rem auto 0;
+	opacity: 0.5;
+}
+
+
+.cocktail-img {
+	display: block;
+	width: 220px;
+	aspect-ratio: 4 / 5;
+	object-fit: cover;
+	border-radius: 5px;
+	margin-bottom: 5px;
+}
+
+
+
+
+
+
+
+
+#spirits {
+	line-height: 0.4;
+}
+
+.review-btn {
+	font-family: "Montserrat", sans-serif;
+	color: #181C1F;
+	background-color: #C5A059 !important;
+	border: none;
+	border-radius: 0px !important;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 600;
+	padding: 15px 30px 15px 30px;
+	margin: 0px 0 -10px 0;
+	animation: reviewEntrance 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both,
+	           reviewGlow 2.8s ease-in-out 1.4s infinite;
+}
+
+@keyframes reviewEntrance {
+	from {
+		opacity: 0;
+		transform: translateY(10px) scale(0.95);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0) scale(1);
+	}
+}
+
+@keyframes reviewGlow {
+	0%, 100% {
+		box-shadow: 0 0 0px 0px rgba(197, 160, 89, 0);
+		transform: scale(1);
+	}
+	50% {
+		box-shadow: 0 0 18px 6px rgba(197, 160, 89, 0.45);
+		transform: scale(1.03);
+	}
+}
+
+.is-centered {
+	text-align: center;
+}
+
+.spirit-title {
+	margin-bottom: 35px;
+	font-size: 28px;
+	text-align: center;
+	font-family: "Libre Caslon Display", serif;
+	text-transform: uppercase;
+	font-weight: 400;
+	color: #C5A059;
+	letter-spacing: 2px;
+}
+
+.website-link {
+	color: #fff;
+	text-decoration: none;
+}
+
+.our-address {
+	margin-top: -30px;
+	margin-bottom: -15px;
+	font-size: 14px;
+	font-family: "Montserrat", sans-serif;
+	color: #bab6ae;
+	letter-spacing: 0px;
+	text-transform: uppercase;
+}
+
+.main-menu {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 500;
+}
+
+
+.border-reviews {
+	padding: 10px;
+}
+
+
+@media screen and (min-width: 700px) {
+	body {
+		width: 600px;
+	}
+}
+
+/* ── Popup Overlay ── */
+#popup-overlay {
+	position: fixed;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.85);
+	backdrop-filter: blur(4px);
+	-webkit-backdrop-filter: blur(4px);
+	z-index: 9998;
+	display: none;
+	opacity: 0;
+	transition: opacity 0.4s ease;
+}
+
+#popup-overlay.overlay-visible {
+	opacity: 1;
+}
+
+/* ── Popup Card ── */
+#cocktail-popup {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -46%);
+	width: calc(100% - 40px);
+	max-width: 340px;
+	max-height: 88vh;
+	background: #13171a;
+	border: 1px solid rgba(197, 160, 89, 0.4);
+	z-index: 9999;
+	display: none;
+	flex-direction: column;
+	overflow: hidden;
+	opacity: 0;
+	transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+#cocktail-popup.popup-visible {
+	opacity: 1;
+	transform: translate(-50%, -50%);
+}
+
+/* ── Image Block ── */
+.popup-img-wrap {
+	position: relative;
+	width: 100%;
+	height: 95vw;
+	max-height: 450px;
+	overflow: hidden;
+	flex-shrink: 0;
+	margin-bottom: -1px;
+}
+
+.popup-img-wrap img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center top;
+	display: block;
+}
+
+.popup-img-fade {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 60%;
+	background: linear-gradient(to bottom, transparent, #13171a);
+}
+
+/* ── Content Block ── */
+.popup-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	padding: 0 1.5rem 1.8rem;
+	gap: 10px;
+}
+
+.popup-label {
+	font-family: "Montserrat", sans-serif;
+	font-size: 10px;
+	font-weight: 600;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+	color: #C5A059;
+	margin: 0;
+}
+
+.popup-title {
+	font-family: "Libre Caslon Display", serif;
+	font-size: 28px;
+	font-weight: 400;
+	line-height: 1.1;
+	letter-spacing: -0.5px;
+	color: #FFFCF1;
+	margin: 0;
+}
+
+.popup-sub {
+	font-family: "Montserrat", sans-serif;
+	font-size: 12px;
+	font-weight: 300;
+	line-height: 1.7;
+	color: #9a9ea3;
+	margin: 0;
+}
+
+#discover-menu {
+	margin-top: 6px;
+	padding: 13px 32px;
+	background-color: #C5A059;
+	color: #13171a;
+	border: none;
+	font-family: "Montserrat", sans-serif;
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: 2.5px;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+#discover-menu:hover {
+	background-color: #d4b06a;
+	transform: scale(1.02);
+}
+
+/* ── Close Button ── */
+#close-popup {
+	position: absolute;
+	top: 12px;
+	right: 14px;
+	width: 30px;
+	height: 30px;
+	font-size: 1.3rem;
+	line-height: 30px;
+	text-align: center;
+	color: #FFFCF1;
+	background: rgba(0, 0, 0, 0.45);
+	border: none;
+	border-radius: 50%;
+	cursor: pointer;
+	z-index: 100;
+	transition: background 0.2s ease;
+}
