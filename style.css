@@ -622,3 +622,186 @@ h6 {
 	z-index: 100;
 	transition: background 0.2s ease;
 }
+
+/* ══════════════════════════════════════
+   REVIEW LOCATION POPUP
+══════════════════════════════════════ */
+
+#review-overlay {
+	position: fixed;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.88);
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
+	z-index: 9998;
+	display: none;
+	opacity: 0;
+	transition: opacity 0.4s ease;
+}
+
+#review-overlay.review-overlay-visible {
+	opacity: 1;
+}
+
+#review-popup {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -46%);
+	width: calc(100% - 40px);
+	max-width: 400px;
+	max-height: 88vh;
+	overflow-y: auto;
+	background: #13171a;
+	border: 1px solid rgba(197, 160, 89, 0.35);
+	z-index: 9999;
+	display: none;
+	flex-direction: column;
+	padding: 44px 32px 38px;
+	box-sizing: border-box;
+	opacity: 0;
+	transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+#review-popup.review-popup-visible {
+	opacity: 1;
+	transform: translate(-50%, -50%);
+}
+
+#close-review-popup {
+	position: absolute;
+	top: 14px;
+	right: 16px;
+	width: 30px;
+	height: 30px;
+	font-size: 1.3rem;
+	line-height: 30px;
+	text-align: center;
+	background: rgba(255, 255, 255, 0.06);
+	border: none;
+	border-radius: 50%;
+	color: rgba(255, 252, 241, 0.6);
+	cursor: pointer;
+	transition: color 0.2s, background 0.2s;
+}
+
+#close-review-popup:hover {
+	color: #FFFCF1;
+	background: rgba(255, 255, 255, 0.12);
+}
+
+/* ── Step 1: Location select ── */
+
+#review-step-select {
+	display: flex;
+	flex-direction: column;
+	transition: opacity 0.25s ease;
+}
+
+.review-popup-label {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 10px;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+	color: #C5A059;
+	margin: 0 0 14px;
+}
+
+.review-popup-title {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 26px;
+	font-weight: 700;
+	color: #FFFCF1;
+	line-height: 1.2;
+	margin: 0 0 10px;
+}
+
+.review-popup-sub {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 12px;
+	color: rgba(255, 252, 241, 0.45);
+	margin: 0 0 30px;
+	line-height: 1.6;
+}
+
+.review-locations {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.review-location-btn {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	background: transparent;
+	border: 1px solid rgba(197, 160, 89, 0.22);
+	color: #FFFCF1;
+	padding: 18px 22px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 13px;
+	font-weight: 500;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: border-color 0.25s, color 0.25s, background 0.25s;
+	text-align: left;
+}
+
+.review-location-btn:hover {
+	border-color: #C5A059;
+	background: rgba(197, 160, 89, 0.06);
+	color: #C5A059;
+}
+
+.location-badge {
+	font-size: 9px;
+	font-weight: 400;
+	letter-spacing: 1.5px;
+	color: rgba(197, 160, 89, 0.55);
+	text-transform: uppercase;
+}
+
+.location-arrow {
+	font-size: 18px;
+	color: rgba(197, 160, 89, 0.5);
+	line-height: 1;
+}
+
+.review-location-btn:hover .location-badge,
+.review-location-btn:hover .location-arrow {
+	color: #C5A059;
+}
+
+/* ── Step 2: Widget ── */
+
+#review-step-widget {
+	display: none;
+	flex-direction: column;
+	gap: 16px;
+	opacity: 0;
+	transition: opacity 0.25s ease;
+}
+
+#review-back-btn {
+	background: none;
+	border: none;
+	color: rgba(255, 252, 241, 0.45);
+	font-family: 'Montserrat', sans-serif;
+	font-size: 11px;
+	letter-spacing: 1.5px;
+	text-transform: uppercase;
+	cursor: pointer;
+	padding: 0;
+	text-align: left;
+	transition: color 0.2s;
+}
+
+#review-back-btn:hover {
+	color: #C5A059;
+}
+
+.review-widget-slot {
+	min-height: 160px;
+}

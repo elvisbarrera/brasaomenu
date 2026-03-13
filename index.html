@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
-    <!-- google review -->
-    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+    <!-- elfsight reviews -->
+    <script src="https://elfsightcdn.com/platform.js" async></script>
 
     <!-- bulma styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
@@ -165,6 +165,43 @@
     <!-- END LOADER SCREEN -->
 
 
+    <!-- REVIEW LOCATION POPUP -->
+    <div id="review-overlay"></div>
+    <div id="review-popup">
+        <button id="close-review-popup">&times;</button>
+        <div id="review-step-select">
+            <p class="review-popup-label">Leave Us a Review</p>
+            <h2 class="review-popup-title">Choose Your<br>Location</h2>
+            <p class="review-popup-sub">Select the Brasão location you visited.</p>
+            <div class="review-locations">
+                <button class="review-location-btn" onclick="selectReviewLocation('san-antonio')">
+                    <span class="location-city">San Antonio</span>
+                    <span class="location-arrow">&#8250;</span>
+                </button>
+                <button class="review-location-btn" onclick="selectReviewLocation('plano')">
+                    <span class="location-city">Plano</span>
+                    <span class="location-badge">Legacy</span>
+                </button>
+                <button class="review-location-btn" onclick="selectReviewLocation('irving')">
+                    <span class="location-city">Irving</span>
+                    <span class="location-badge">Las Colinas</span>
+                </button>
+            </div>
+        </div>
+        <div id="review-step-widget">
+            <button id="review-back-btn" onclick="backToLocationSelect()">&#8592; Back</button>
+            <div id="review-san-antonio" class="review-widget-slot">
+                <div class="elfsight-app-bb75ab4d-35fb-4986-92f1-4412dba16ac2" data-elfsight-app-lazy></div>
+            </div>
+            <div id="review-plano" class="review-widget-slot">
+                <div class="elfsight-app-4957a2dd-4d00-4c35-8fd5-a5f7c30012e3" data-elfsight-app-lazy></div>
+            </div>
+            <div id="review-irving" class="review-widget-slot">
+                <div class="elfsight-app-8c5e3fbc-0ebe-4732-a3f6-9486245e2871" data-elfsight-app-lazy></div>
+            </div>
+        </div>
+    </div>
+
     <!-- POP UP -->
     <div id="popup-overlay"></div>
 
@@ -206,9 +243,7 @@
         <!-- leave a review button -->
         <div class="is-centered">
             <div class="list-2">
-                <div class="tabLinks button is-black review-btn" onclick="openTab(event,'reviews')"><a>
-                        Write a Review
-                    </a></div>
+                <div class="button review-btn" onclick="openReviewPopup()">Write a Review</div>
             </div>
         </div>
         <br>
@@ -7954,7 +7989,10 @@
             <div class="elfsight-app-bb75ab4d-35fb-4986-92f1-4412dba16ac2"></div>
 
         </div>
-    </div>
+    </div> 
+
+
+    
 
 
 
@@ -7971,6 +8009,7 @@
         <!-- <p><a class="website-link" href="https://www.brasaousa.com">Brasão Brazilian Steakhouse®</a> </p> -->
 
     </div>
+    
 
     <script src="main.js"></script>
 </body>
