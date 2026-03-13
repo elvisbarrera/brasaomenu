@@ -785,7 +785,7 @@ h6 {
 #review-step-widget {
 	display: none;
 	flex-direction: column;
-	gap: 16px;
+	gap: 12px;
 	opacity: 0;
 	transition: opacity 0.25s ease;
 }
@@ -810,4 +810,6 @@ h6 {
 
 .review-widget-slot {
 	min-height: 160px;
+	margin: 0 -40px -48px;
+	padding: 0 6px 16px;
 }
