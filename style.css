@@ -813,3 +813,17 @@ h6 {
 	margin: 0 -40px -48px;
 	padding: 0 6px 16px;
 }
+
+
+.vintage-note {
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 10px;
+	font-style: italic;
+	color: rgba(255, 252, 241, 0.35);
+	letter-spacing: 0.5px;
+	line-height: 1.7;
+	margin: 8px auto 0;
+	max-width: 420px;
+	padding: 0 16px;
+}
