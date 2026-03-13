@@ -648,16 +648,16 @@ h6 {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -46%);
-	width: calc(100% - 40px);
-	max-width: 400px;
-	max-height: 88vh;
+	width: calc(100% - 20px);
+	max-width: 540px;
+	max-height: 92vh;
 	overflow-y: auto;
 	background: #13171a;
 	border: 1px solid rgba(197, 160, 89, 0.35);
 	z-index: 9999;
 	display: none;
 	flex-direction: column;
-	padding: 44px 32px 38px;
+	padding: 56px 40px 48px;
 	box-sizing: border-box;
 	opacity: 0;
 	transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
@@ -704,30 +704,30 @@ h6 {
 	letter-spacing: 3px;
 	text-transform: uppercase;
 	color: #C5A059;
-	margin: 0 0 14px;
+	margin: 0 0 18px;
 }
 
 .review-popup-title {
 	font-family: 'Montserrat', sans-serif;
-	font-size: 26px;
+	font-size: 32px;
 	font-weight: 700;
 	color: #FFFCF1;
-	line-height: 1.2;
-	margin: 0 0 10px;
+	line-height: 1.15;
+	margin: 0 0 12px;
 }
 
 .review-popup-sub {
 	font-family: 'Montserrat', sans-serif;
-	font-size: 12px;
+	font-size: 13px;
 	color: rgba(255, 252, 241, 0.45);
-	margin: 0 0 30px;
-	line-height: 1.6;
+	margin: 0 0 40px;
+	line-height: 1.7;
 }
 
 .review-locations {
 	display: flex;
 	flex-direction: column;
-	gap: 10px;
+	gap: 14px;
 }
 
 .review-location-btn {
@@ -738,11 +738,11 @@ h6 {
 	background: transparent;
 	border: 1px solid rgba(197, 160, 89, 0.22);
 	color: #FFFCF1;
-	padding: 18px 22px;
+	padding: 26px 28px;
 	font-family: 'Montserrat', sans-serif;
-	font-size: 13px;
+	font-size: 15px;
 	font-weight: 500;
-	letter-spacing: 2px;
+	letter-spacing: 2.5px;
 	text-transform: uppercase;
 	cursor: pointer;
 	transition: border-color 0.25s, color 0.25s, background 0.25s;
@@ -764,9 +764,15 @@ h6 {
 }
 
 .location-arrow {
-	font-size: 18px;
-	color: rgba(197, 160, 89, 0.5);
+	font-size: 20px;
+	color: #C5A059;
 	line-height: 1;
+	animation: arrowNudge 1.4s ease-in-out infinite;
+}
+
+@keyframes arrowNudge {
+	0%, 100% { transform: translateX(0); opacity: 0.55; }
+	50% { transform: translateX(6px); opacity: 1; }
 }
 
 .review-location-btn:hover .location-badge,
