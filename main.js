@@ -38,11 +38,16 @@ document.addEventListener('click', function (e) {
 
     const inSpirits = !!btn.closest('#spirits');
     const inCocktails = !!btn.closest('#cocktails');
-    if (!inSpirits && !inCocktails) return;
+    const inWines = !!btn.closest('#wines');
+    if (!inSpirits && !inCocktails && !inWines) return;
 
     const filter = btn.dataset.filter;
-    const tab = inSpirits ? document.getElementById('spirits') : document.getElementById('cocktails');
-    const groupClass = inSpirits ? '.spirit-group' : '.cocktail-group';
+    const tab = inSpirits ? document.getElementById('spirits')
+              : inWines   ? document.getElementById('wines')
+              : document.getElementById('cocktails');
+    const groupClass = inSpirits ? '.spirit-group'
+                     : inWines   ? '.wine-group'
+                     : '.cocktail-group';
 
     // Update active button only within this tab's filter bar
     tab.querySelectorAll('.cocktail-filter-btn').forEach(b => b.classList.remove('active'));

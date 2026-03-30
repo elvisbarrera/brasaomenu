@@ -1061,6 +1061,19 @@ body {
 	margin-top: 0 !important;
 }
 
+#wines .cocktail-filter-bar {
+	padding-top: 0 !important;
+	margin-top: 0 !important;
+}
+
+.wine-group.hidden {
+	display: none;
+}
+
+#wines:not(.filter-active) .wine-group + .wine-group {
+	padding-top: 2.5rem;
+}
+
 .cocktail-filter-btn {
 	background: transparent;
 	border: 1px solid #C5A059;
