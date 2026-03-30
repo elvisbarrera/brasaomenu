@@ -35,16 +35,26 @@ function openTab(event, tabId) {
 document.addEventListener('click', function (e) {
     const btn = e.target.closest('.cocktail-filter-btn');
     if (!btn) return;
+
+    const inSpirits = !!btn.closest('#spirits');
+    const inCocktails = !!btn.closest('#cocktails');
+    if (!inSpirits && !inCocktails) return;
+
     const filter = btn.dataset.filter;
-    document.querySelectorAll('.cocktail-filter-btn').forEach(b => b.classList.remove('active'));
+    const tab = inSpirits ? document.getElementById('spirits') : document.getElementById('cocktails');
+    const groupClass = inSpirits ? '.spirit-group' : '.cocktail-group';
+
+    // Update active button only within this tab's filter bar
+    tab.querySelectorAll('.cocktail-filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-    const cocktailsTab = document.getElementById('cocktails');
+
     if (filter === 'all') {
-        cocktailsTab.classList.remove('filter-active');
+        tab.classList.remove('filter-active');
     } else {
-        cocktailsTab.classList.add('filter-active');
+        tab.classList.add('filter-active');
     }
-    document.querySelectorAll('.cocktail-group').forEach(group => {
+
+    tab.querySelectorAll(groupClass).forEach(group => {
         if (filter === 'all' || group.dataset.group === filter) {
             group.classList.remove('hidden');
         } else {
