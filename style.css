@@ -59,12 +59,12 @@ ul.list a {
 	padding: 0 1.5rem 0 1.5rem;
 }
 
-#desserts > div {
+#desserts>div {
 	display: flex;
 	flex-direction: column;
 }
 
-#desserts > div::after {
+#desserts>div::after {
 	content: "";
 	display: block;
 	width: 60%;
@@ -85,7 +85,7 @@ ul.list a {
 	order: 1;
 }
 
-#desserts > div:not(.center-dessert) img {
+#desserts>div:not(.center-dessert) img {
 	margin-top: -20px;
 }
 
@@ -95,12 +95,12 @@ ul.list a {
 	grid-template-columns: 1fr 1fr !important;
 }
 
-#desserts .cocktails-grid > .dessert-card {
+#desserts .cocktails-grid>.dessert-card {
 	display: flex !important;
 	flex-direction: column !important;
 }
 
-#desserts .cocktails-grid > .dessert-card::after,
+#desserts .cocktails-grid>.dessert-card::after,
 #desserts .cocktails-grid::after {
 	display: none !important;
 }
@@ -478,7 +478,7 @@ h6 {
 	padding: 15px 30px 15px 30px;
 	margin: 0px 0 -10px 0;
 	animation: reviewEntrance 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both,
-	           reviewGlow 2.8s ease-in-out 1.4s infinite;
+		reviewGlow 2.8s ease-in-out 1.4s infinite;
 }
 
 @keyframes reviewEntrance {
@@ -486,6 +486,7 @@ h6 {
 		opacity: 0;
 		transform: translateY(10px) scale(0.95);
 	}
+
 	to {
 		opacity: 1;
 		transform: translateY(0) scale(1);
@@ -493,10 +494,13 @@ h6 {
 }
 
 @keyframes reviewGlow {
-	0%, 100% {
+
+	0%,
+	100% {
 		box-shadow: 0 0 0px 0px rgba(197, 160, 89, 0);
 		transform: scale(1);
 	}
+
 	50% {
 		box-shadow: 0 0 18px 6px rgba(197, 160, 89, 0.45);
 		transform: scale(1.03);
@@ -845,8 +849,17 @@ h6 {
 }
 
 @keyframes arrowNudge {
-	0%, 100% { transform: translateX(0); opacity: 0.55; }
-	50% { transform: translateX(6px); opacity: 1; }
+
+	0%,
+	100% {
+		transform: translateX(0);
+		opacity: 0.55;
+	}
+
+	50% {
+		transform: translateX(6px);
+		opacity: 1;
+	}
 }
 
 .review-location-btn:hover .location-badge,
@@ -909,7 +922,9 @@ h6 {
 ═══════════════════════════════════════════════════════════════ */
 
 /* ── Global Rendering ── */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
@@ -1021,60 +1036,70 @@ body {
 	display: block;
 }
 
-.spirit-title::before { --dir: right; }
-.spirit-title::after  { --dir: left; }
+.spirit-title::before {
+	--dir: right;
+}
+
+.spirit-title::after {
+	--dir: left;
+}
 
 /* ══════════════════════════════════════
    COCKTAIL FILTER BAR
 ══════════════════════════════════════ */
 
 .cocktail-filter-bar {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
-    padding: 40px 0 30px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 8px;
+	padding: 40px 0 30px;
+}
+
+#spirits .cocktail-filter-bar {
+	padding-top: 0;
+	margin-top: -7px;
 }
 
 .cocktail-filter-btn {
-    background: transparent;
-    border: 1px solid #C5A059;
-    color: #C5A059;
-    font-family: "Cormorant Garamond", serif;
-    font-size: 13px;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    padding: 7px 18px;
-    cursor: pointer;
-    border-radius: 2px;
-    transition: background 0.2s, color 0.2s;
+	background: transparent;
+	border: 1px solid #C5A059;
+	color: #C5A059;
+	font-family: "Cormorant Garamond", serif;
+	font-size: 13px;
+	letter-spacing: 2.5px;
+	text-transform: uppercase;
+	padding: 7px 18px;
+	cursor: pointer;
+	border-radius: 2px;
+	transition: background 0.2s, color 0.2s;
 }
 
 .cocktail-filter-btn:hover,
 .cocktail-filter-btn.active {
-    background: #C5A059;
-    color: #1a1a1a;
+	background: #C5A059;
+	color: #1a1a1a;
 }
 
 .cocktail-group {
-    transition: opacity 0.2s;
+	transition: opacity 0.2s;
 }
 
 .cocktail-group.hidden {
-    display: none;
+	display: none;
 }
 
 /* Space between groups only in "All" view */
-#cocktails:not(.filter-active) .cocktail-group + .cocktail-group {
-    padding-top: 2.5rem;
+#cocktails:not(.filter-active) .cocktail-group+.cocktail-group {
+	padding-top: 2.5rem;
 }
 
 .spirit-group.hidden {
-    display: none;
+	display: none;
 }
 
-#spirits:not(.filter-active) .spirit-group + .spirit-group {
-    padding-top: 2.5rem;
+#spirits:not(.filter-active) .spirit-group+.spirit-group {
+	padding-top: 2.5rem;
 }
 
 /* ══════════════════════════════════════
@@ -1087,9 +1112,9 @@ body {
 }
 
 /* Card shell */
-.cocktails-grid > .borderline,
-.cocktails-grid > .cocktail-card,
-.cocktails-grid > .dessert-card {
+.cocktails-grid>.borderline,
+.cocktails-grid>.cocktail-card,
+.cocktails-grid>.dessert-card {
 	display: flex;
 	flex-direction: column;
 	background: rgba(255, 252, 241, 0.028);
@@ -1099,9 +1124,9 @@ body {
 	transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.cocktails-grid > .borderline:active,
-.cocktails-grid > .cocktail-card:active,
-.cocktails-grid > .dessert-card:active {
+.cocktails-grid>.borderline:active,
+.cocktails-grid>.cocktail-card:active,
+.cocktails-grid>.dessert-card:active {
 	border-color: rgba(197, 160, 89, 0.4);
 	box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
 }
@@ -1146,19 +1171,21 @@ body {
 
 /* Gold separator line between name and price */
 .cocktails-grid .cocktail::after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 1px;
-    background: linear-gradient(to right, #C5A059 0%, rgba(197, 160, 89, 0.4) 60%, transparent 100%);
-    margin: 6px 0 3px;
-    transform: scaleX(0);
-    transform-origin: left center;
-    animation: goldLineDrawLTR 1s cubic-bezier(0.4, 0, 0.2, 1) 0.2s forwards;
+	content: '';
+	display: block;
+	width: 100%;
+	height: 1px;
+	background: linear-gradient(to right, #C5A059 0%, rgba(197, 160, 89, 0.4) 60%, transparent 100%);
+	margin: 6px 0 3px;
+	transform: scaleX(0);
+	transform-origin: left center;
+	animation: goldLineDrawLTR 1s cubic-bezier(0.4, 0, 0.2, 1) 0.2s forwards;
 }
 
 @keyframes goldLineDrawLTR {
-    to { transform: scaleX(1); }
+	to {
+		transform: scaleX(1);
+	}
 }
 
 /* Cocktail name in grid */
@@ -1215,89 +1242,89 @@ body {
 ══════════════════════════════════════ */
 
 /* Cards need relative positioning for the overlay */
-#cocktails .cocktails-grid > .borderline,
-#cocktails .cocktails-grid > .cocktail-card,
-#desserts .cocktails-grid > .dessert-card {
-    position: relative;
+#cocktails .cocktails-grid>.borderline,
+#cocktails .cocktails-grid>.cocktail-card,
+#desserts .cocktails-grid>.dessert-card {
+	position: relative;
 }
 
 /* Three-dot circle button */
 .info-dots-btn {
-    position: absolute;
-    bottom: 7px;
-    right: 7px;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    border: 1px solid rgba(197, 160, 89, 0.3);
-    background: rgba(10, 8, 5, 0.55);
-    backdrop-filter: blur(6px);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    z-index: 4;
-    transition: border-color 0.25s, background 0.25s, transform 0.2s;
-    flex-shrink: 0;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+	position: absolute;
+	bottom: 7px;
+	right: 7px;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	border: 1px solid rgba(197, 160, 89, 0.3);
+	background: rgba(10, 8, 5, 0.55);
+	backdrop-filter: blur(6px);
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	z-index: 4;
+	transition: border-color 0.25s, background 0.25s, transform 0.2s;
+	flex-shrink: 0;
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
 }
 
 .info-dots-btn span {
-    display: none;
+	display: none;
 }
 
 .info-dots-btn::after {
-    content: 'i';
-    font-family: "Cormorant Garamond", serif;
-    font-style: italic;
-    font-size: 12px;
-    font-weight: 400;
-    color: rgba(197, 160, 89, 0.75);
-    line-height: 1;
-    transition: color 0.25s;
+	content: 'i';
+	font-family: "Cormorant Garamond", serif;
+	font-style: italic;
+	font-size: 12px;
+	font-weight: 400;
+	color: rgba(197, 160, 89, 0.75);
+	line-height: 1;
+	transition: color 0.25s;
 }
 
 .info-dots-btn:hover {
-    border-color: rgba(197, 160, 89, 0.75);
-    background: rgba(197, 160, 89, 0.12);
-    transform: scale(1.1);
+	border-color: rgba(197, 160, 89, 0.75);
+	background: rgba(197, 160, 89, 0.12);
+	transform: scale(1.1);
 }
 
 .info-dots-btn:hover::after {
-    color: #C5A059;
+	color: #C5A059;
 }
 
 .info-open .info-dots-btn {
-    border-color: rgba(197, 160, 89, 0.85);
-    background: rgba(197, 160, 89, 0.16);
+	border-color: rgba(197, 160, 89, 0.85);
+	background: rgba(197, 160, 89, 0.16);
 }
 
 .info-open .info-dots-btn::after {
-    color: #C5A059;
+	color: #C5A059;
 }
 
 /* Slide-up description overlay */
 .info-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(13, 10, 7, 0.92);
-    backdrop-filter: blur(6px);
-    color: rgba(220, 210, 190, 0.92);
-    font-size: 11px;
-    line-height: 1.65;
-    padding: 13px 13px 40px;
-    transform: translateY(100%);
-    transition: transform 0.26s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 3;
-    pointer-events: none;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(13, 10, 7, 0.92);
+	backdrop-filter: blur(6px);
+	color: rgba(220, 210, 190, 0.92);
+	font-size: 11px;
+	line-height: 1.65;
+	padding: 13px 13px 40px;
+	transform: translateY(100%);
+	transition: transform 0.26s cubic-bezier(0.4, 0, 0.2, 1);
+	z-index: 3;
+	pointer-events: none;
 }
 
 .info-open .info-overlay {
-    transform: translateY(0);
-    pointer-events: auto;
+	transform: translateY(0);
+	pointer-events: auto;
 }
 
 /* ══════════════════════════════════════
@@ -1388,7 +1415,10 @@ h6 {
 	opacity: 0;
 	transition: opacity 0.35s ease;
 }
-#drink-overlay.drink-overlay-visible { opacity: 1; }
+
+#drink-overlay.drink-overlay-visible {
+	opacity: 1;
+}
 
 #drink-popup {
 	display: none;
@@ -1409,6 +1439,7 @@ h6 {
 	flex-direction: column;
 	transition: transform 0.42s cubic-bezier(0.32, 0.72, 0, 1);
 }
+
 #drink-popup.drink-popup-visible {
 	transform: translateX(-50%) translateY(0);
 }
@@ -1432,6 +1463,7 @@ h6 {
 	justify-content: center;
 	padding: 0;
 }
+
 #close-drink-popup:hover {
 	color: rgba(197, 160, 89, 0.9);
 	border-color: rgba(197, 160, 89, 0.5);
@@ -1445,12 +1477,14 @@ h6 {
 	flex-shrink: 0;
 	overflow: hidden;
 }
+
 .drink-img-wrap img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
 	display: block;
 }
+
 .drink-img-fade {
 	position: absolute;
 	bottom: 0;
