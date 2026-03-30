@@ -1057,8 +1057,8 @@ body {
 }
 
 #spirits .cocktail-filter-bar {
-	padding-top: 0;
-	margin-top: -7px;
+	padding-top: 0 !important;
+	margin-top: 0 !important;
 }
 
 .cocktail-filter-btn {
