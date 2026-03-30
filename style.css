@@ -1,11 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
+
+html {
+	min-height: 100%;
+	min-height: 100dvh;
+	background-color: #0B0E11;
+}
+
 body {
 	margin: 0 auto;
 	box-sizing: border-box;
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 300;
-	background-color: #181C1F;
-	background-image: linear-gradient(to right, #171b22 0%, #181C1F 50%, #222830 100%);
-	background-attachment: fixed;
+	background-color: #0B0E11;
+	background-image: linear-gradient(to right, #0A0D11 0%, #0B0E11 50%, #0E1115 100%);
+	background-attachment: scroll;
+	background-size: 100% 100%;
+	min-height: 100vh;
+	min-height: 100dvh;
+	width: 100%;
 	color: #FFFCF1;
 }
 
@@ -75,6 +87,30 @@ ul.list a {
 
 #desserts > div:not(.center-dessert) img {
 	margin-top: -20px;
+}
+
+/* Override old per-item rules for the new grid layout */
+#desserts .cocktails-grid {
+	display: grid !important;
+	grid-template-columns: 1fr 1fr !important;
+}
+
+#desserts .cocktails-grid > .dessert-card {
+	display: flex !important;
+	flex-direction: column !important;
+}
+
+#desserts .cocktails-grid > .dessert-card::after,
+#desserts .cocktails-grid::after {
+	display: none !important;
+}
+
+#desserts .cocktails-grid .cocktail-img {
+	width: 100% !important;
+	aspect-ratio: 1 / 1 !important;
+	border-radius: 0 !important;
+	margin: 0 !important;
+	margin-top: 0 !important;
 }
 
 .dessert-name {
@@ -254,7 +290,7 @@ hr {
 .tabs.is-toggle a {
 	border-radius: 0px !important;
 	border-color: #333;
-	background-color: #181C1F;
+	background-color: #0B0E11;
 	color: #FFFCF1;
 	transition: all 0.3s ease;
 }
@@ -382,6 +418,44 @@ h6 {
 }
 
 
+/* Two-column cocktail grid */
+.cocktails-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 12px;
+	margin-bottom: 1rem;
+}
+
+.cocktails-grid .container {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.cocktails-grid .cocktail-img {
+	width: 100%;
+	max-width: 100%;
+}
+
+.cocktails-grid .cocktail-images {
+	max-width: 100%;
+}
+
+.cocktails-grid .cocktail-name {
+	font-size: 18px;
+	margin-top: 10px;
+}
+
+.cocktails-grid .drink-description {
+	padding-left: 0;
+	font-size: 12px;
+}
+
+.cocktails-grid .cocktail-description {
+	font-size: 12px;
+	padding-right: 0;
+}
+
+
 
 
 
@@ -502,7 +576,7 @@ h6 {
 	width: calc(100% - 40px);
 	max-width: 340px;
 	max-height: 88vh;
-	background: #13171a;
+	background: #090C0F;
 	border: 1px solid rgba(197, 160, 89, 0.4);
 	z-index: 9999;
 	display: none;
@@ -542,7 +616,7 @@ h6 {
 	left: 0;
 	right: 0;
 	height: 60%;
-	background: linear-gradient(to bottom, transparent, #13171a);
+	background: linear-gradient(to bottom, transparent, #090C0F);
 }
 
 /* ── Content Block ── */
@@ -588,7 +662,7 @@ h6 {
 	margin-top: 6px;
 	padding: 13px 32px;
 	background-color: #C5A059;
-	color: #13171a;
+	color: #090C0F;
 	border: none;
 	font-family: "Montserrat", sans-serif;
 	font-size: 11px;
@@ -652,7 +726,7 @@ h6 {
 	max-width: 540px;
 	max-height: 92vh;
 	overflow-y: auto;
-	background: #13171a;
+	background: #090C0F;
 	border: 1px solid rgba(197, 160, 89, 0.35);
 	z-index: 9999;
 	display: none;
@@ -826,4 +900,638 @@ h6 {
 	margin: 8px auto 0;
 	max-width: 420px;
 	padding: 0 16px;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   BRASÃO MENU — PREMIUM DESIGN SYSTEM 2026
+   Visual DNA aligned with brasaousa.com
+═══════════════════════════════════════════════════════════════ */
+
+/* ── Global Rendering ── */
+*, *::before, *::after {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Loader matches new dark background ── */
+#page-loader {
+	background-color: #0B0E11 !important;
+}
+
+/* ── Body: richer background depth ── */
+body {
+	background-image: radial-gradient(ellipse at 50% 0%, #111519 0%, #0B0E11 60%, #080B0E 100%);
+}
+
+/* ══════════════════════════════════════
+   HEADER
+══════════════════════════════════════ */
+.header-one {
+	padding: 2.8rem 1.5rem 0.4rem;
+	text-align: center;
+	position: relative;
+}
+
+.header-one .title {
+	padding-top: 0;
+	margin-bottom: 0.3rem;
+}
+
+.header-one::after {
+	content: "";
+	display: block;
+	width: 28%;
+	height: 1px;
+	background: linear-gradient(to right, transparent, rgba(197, 160, 89, 0.45), transparent);
+	margin: 1.2rem auto 0.2rem;
+}
+
+.our-address {
+	font-size: 9px !important;
+	letter-spacing: 4.5px !important;
+	font-weight: 400 !important;
+	color: rgba(197, 160, 89, 0.55) !important;
+	margin-top: 0.1rem !important;
+	margin-bottom: 0 !important;
+	text-transform: uppercase !important;
+}
+
+/* ══════════════════════════════════════
+   REVIEW BUTTON
+══════════════════════════════════════ */
+.review-btn {
+	font-size: 9px !important;
+	letter-spacing: 3.5px !important;
+	padding: 11px 28px !important;
+	border-radius: 0 !important;
+}
+
+/* ══════════════════════════════════════
+   NAVIGATION TABS
+══════════════════════════════════════ */
+.tabs.is-toggle a {
+	font-size: 10px !important;
+	letter-spacing: 2px !important;
+	text-transform: uppercase !important;
+	padding: 0.65em 0.88em !important;
+	font-weight: 500 !important;
+	border-color: rgba(197, 160, 89, 0.18) !important;
+	transition: all 0.25s ease !important;
+}
+
+.tabs.is-toggle li.is-active a {
+	font-weight: 700 !important;
+	letter-spacing: 2px !important;
+	background-color: #C5A059 !important;
+	border-color: #C5A059 !important;
+	color: #111417 !important;
+}
+
+.tabs.is-toggle a:hover {
+	background-color: rgba(197, 160, 89, 0.06) !important;
+	border-color: rgba(197, 160, 89, 0.45) !important;
+	color: #C5A059 !important;
+}
+
+/* ══════════════════════════════════════
+   SECTION TITLES
+══════════════════════════════════════ */
+.spirit-title {
+	font-family: "Cormorant Garamond", "Libre Caslon Display", serif !important;
+	font-size: 19px !important;
+	font-weight: 400 !important;
+	font-style: italic;
+	letter-spacing: 5px !important;
+	color: #C5A059 !important;
+	text-transform: uppercase !important;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 12px;
+}
+
+.spirit-title::before,
+.spirit-title::after {
+	content: "";
+	flex: 0 0 20px;
+	height: 1px;
+	background: linear-gradient(to var(--dir, right), transparent, rgba(197, 160, 89, 0.5));
+	display: block;
+}
+
+.spirit-title::before { --dir: right; }
+.spirit-title::after  { --dir: left; }
+
+/* ══════════════════════════════════════
+   COCKTAIL FILTER BAR
+══════════════════════════════════════ */
+
+.cocktail-filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding: 40px 0 30px;
+}
+
+.cocktail-filter-btn {
+    background: transparent;
+    border: 1px solid #C5A059;
+    color: #C5A059;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 13px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 7px 18px;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.cocktail-filter-btn:hover,
+.cocktail-filter-btn.active {
+    background: #C5A059;
+    color: #1a1a1a;
+}
+
+.cocktail-group {
+    transition: opacity 0.2s;
+}
+
+.cocktail-group.hidden {
+    display: none;
+}
+
+/* Space between groups only in "All" view */
+#cocktails:not(.filter-active) .cocktail-group + .cocktail-group {
+    padding-top: 2.5rem;
+}
+
+/* ══════════════════════════════════════
+   COCKTAIL GRID — CARD LAYOUT
+══════════════════════════════════════ */
+
+/* Gap between cards */
+.cocktails-grid {
+	gap: 10px !important;
+}
+
+/* Card shell */
+.cocktails-grid > .borderline,
+.cocktails-grid > .cocktail-card,
+.cocktails-grid > .dessert-card {
+	display: flex;
+	flex-direction: column;
+	background: rgba(255, 252, 241, 0.028);
+	border: 1px solid rgba(197, 160, 89, 0.14);
+	border-radius: 4px;
+	overflow: hidden;
+	transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cocktails-grid > .borderline:active,
+.cocktails-grid > .cocktail-card:active,
+.cocktails-grid > .dessert-card:active {
+	border-color: rgba(197, 160, 89, 0.4);
+	box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
+}
+
+/* ── Image floats to TOP of each card ── */
+.cocktails-grid .cocktail-images {
+	order: -1;
+	margin: 0 !important;
+	max-width: 100% !important;
+	padding: 0;
+}
+
+/* Aspect ratio 1:1 — clean square crop on mobile */
+.cocktails-grid .cocktail-img {
+	width: 100% !important;
+	max-width: 100% !important;
+	aspect-ratio: 1 / 1 !important;
+	border-radius: 0 !important;
+	object-fit: cover;
+	object-position: center top;
+	display: block;
+}
+
+/* Remove the gold gradient line under each image in card context */
+.cocktails-grid .cocktail-images::after {
+	display: none;
+}
+
+/* ── Text Area inside cards ── */
+
+/* Name + price stacked vertically for clean narrow layout */
+.cocktails-grid .container.drink-container {
+	padding: 9px 10px 2px !important;
+	margin-top: 0 !important;
+	flex-direction: column !important;
+	gap: 1px;
+}
+
+.cocktails-grid .cocktail {
+	margin-right: 0 !important;
+}
+
+/* Gold separator line between name and price */
+.cocktails-grid .cocktail::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, #C5A059 0%, rgba(197, 160, 89, 0.4) 60%, transparent 100%);
+    margin: 6px 0 3px;
+    transform: scaleX(0);
+    transform-origin: left center;
+    animation: goldLineDrawLTR 1s cubic-bezier(0.4, 0, 0.2, 1) 0.2s forwards;
+}
+
+@keyframes goldLineDrawLTR {
+    to { transform: scaleX(1); }
+}
+
+/* Cocktail name in grid */
+.cocktails-grid .cocktail-name {
+	font-family: "Cormorant Garamond", "Libre Caslon Display", serif !important;
+	font-size: 18px !important;
+	font-style: italic;
+	font-weight: 500;
+	margin-top: 0 !important;
+	line-height: 1.3;
+	letter-spacing: 0.3px;
+	color: #FFFCF1;
+	display: block !important;
+}
+
+/* Remove dotted separator — too cramped at small width */
+.cocktails-grid .cocktail-name::after {
+	display: none;
+}
+
+/* Price in grid card */
+.cocktails-grid .price {
+	margin-top: 2px !important;
+	font-size: 11px !important;
+	letter-spacing: 0.5px;
+	color: #C5A059 !important;
+}
+
+.cocktails-grid .price p {
+	margin: 0;
+}
+
+/* Description in grid card */
+.cocktails-grid .drink-description {
+	padding: 3px 10px 11px !important;
+	font-size: 10.5px !important;
+	line-height: 1.55 !important;
+	margin-top: 0 !important;
+	color: rgba(176, 179, 184, 0.8) !important;
+}
+
+/* Oaxaca Spice has description inside .cocktail-description */
+.cocktails-grid .cocktail-description {
+	font-size: 10.5px !important;
+	padding-right: 0 !important;
+	padding-left: 0 !important;
+	margin-top: 2px !important;
+	line-height: 1.55 !important;
+	color: rgba(176, 179, 184, 0.8) !important;
+}
+
+/* ══════════════════════════════════════
+   COCKTAIL CARD — INFO DOTS BUTTON
+══════════════════════════════════════ */
+
+/* Cards need relative positioning for the overlay */
+#cocktails .cocktails-grid > .borderline,
+#cocktails .cocktails-grid > .cocktail-card,
+#desserts .cocktails-grid > .dessert-card {
+    position: relative;
+}
+
+/* Three-dot circle button */
+.info-dots-btn {
+    position: absolute;
+    bottom: 7px;
+    right: 7px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid rgba(197, 160, 89, 0.3);
+    background: rgba(10, 8, 5, 0.55);
+    backdrop-filter: blur(6px);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    z-index: 4;
+    transition: border-color 0.25s, background 0.25s, transform 0.2s;
+    flex-shrink: 0;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+}
+
+.info-dots-btn span {
+    display: none;
+}
+
+.info-dots-btn::after {
+    content: 'i';
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 12px;
+    font-weight: 400;
+    color: rgba(197, 160, 89, 0.75);
+    line-height: 1;
+    transition: color 0.25s;
+}
+
+.info-dots-btn:hover {
+    border-color: rgba(197, 160, 89, 0.75);
+    background: rgba(197, 160, 89, 0.12);
+    transform: scale(1.1);
+}
+
+.info-dots-btn:hover::after {
+    color: #C5A059;
+}
+
+.info-open .info-dots-btn {
+    border-color: rgba(197, 160, 89, 0.85);
+    background: rgba(197, 160, 89, 0.16);
+}
+
+.info-open .info-dots-btn::after {
+    color: #C5A059;
+}
+
+/* Slide-up description overlay */
+.info-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(13, 10, 7, 0.92);
+    backdrop-filter: blur(6px);
+    color: rgba(220, 210, 190, 0.92);
+    font-size: 11px;
+    line-height: 1.65;
+    padding: 13px 13px 40px;
+    transform: translateY(100%);
+    transition: transform 0.26s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 3;
+    pointer-events: none;
+}
+
+.info-open .info-overlay {
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* ══════════════════════════════════════
+   WINE ITEMS
+══════════════════════════════════════ */
+.wine-container {
+	padding: 0.3rem 0 0.3rem;
+	border-bottom: 1px solid rgba(197, 160, 89, 0.06);
+}
+
+.wine-name {
+	font-family: "Cormorant Garamond", "Libre Caslon Display", serif !important;
+	font-size: 17px !important;
+	font-style: italic;
+	letter-spacing: 0.5px;
+}
+
+.wine-description {
+	font-size: 12px !important;
+	line-height: 1.6;
+}
+
+/* ══════════════════════════════════════
+   DESSERT ITEMS
+══════════════════════════════════════ */
+.dessert-name {
+	font-family: "Cormorant Garamond", "Libre Caslon Display", serif !important;
+	font-style: italic;
+}
+
+/* ══════════════════════════════════════
+   COCKTAIL ITEMS — NON-GRID (standalone rows)
+══════════════════════════════════════ */
+.cocktail-name {
+	font-family: "Cormorant Garamond", "Libre Caslon Display", serif !important;
+	font-style: italic;
+	font-size: 18px !important;
+	letter-spacing: 0.3px;
+}
+
+/* ══════════════════════════════════════
+   SPIRITS
+══════════════════════════════════════ */
+#spirits {
+	line-height: 1.5 !important;
+}
+
+/* ══════════════════════════════════════
+   FOOTER
+══════════════════════════════════════ */
+.last-footer {
+	background-color: #060809 !important;
+	color: rgba(255, 252, 241, 0.25) !important;
+	font-size: 0.72rem !important;
+	letter-spacing: 1px;
+	padding: 1.2rem !important;
+}
+
+/* ══════════════════════════════════════
+   SECTION SEPARATOR REFINEMENT
+══════════════════════════════════════ */
+.cocktail-images::after {
+	opacity: 0.3;
+	width: 50%;
+}
+
+/* h6 section sub-labels */
+h6 {
+	font-family: "Montserrat", sans-serif;
+	font-size: 9px !important;
+	letter-spacing: 3px !important;
+	text-transform: uppercase;
+	color: rgba(197, 160, 89, 0.6) !important;
+	font-weight: 600 !important;
+	padding-left: 0 !important;
+	margin-bottom: 0.5rem;
+}
+
+/* ══════════════════════════════════════
+   DRINK DETAIL POPUP
+══════════════════════════════════════ */
+#drink-overlay {
+	display: none;
+	position: fixed;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.78);
+	z-index: 1100;
+	opacity: 0;
+	transition: opacity 0.35s ease;
+}
+#drink-overlay.drink-overlay-visible { opacity: 1; }
+
+#drink-popup {
+	display: none;
+	position: fixed;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%) translateY(100%);
+	width: 100%;
+	max-width: 480px;
+	max-height: 92vh;
+	background: #090C0F;
+	border-top: 1px solid rgba(197, 160, 89, 0.22);
+	border-left: 1px solid rgba(197, 160, 89, 0.1);
+	border-right: 1px solid rgba(197, 160, 89, 0.1);
+	border-radius: 16px 16px 0 0;
+	z-index: 1200;
+	overflow: hidden;
+	flex-direction: column;
+	transition: transform 0.42s cubic-bezier(0.32, 0.72, 0, 1);
+}
+#drink-popup.drink-popup-visible {
+	transform: translateX(-50%) translateY(0);
+}
+
+#close-drink-popup {
+	position: absolute;
+	top: 10px;
+	right: 12px;
+	background: rgba(9, 12, 15, 0.72);
+	border: 1px solid rgba(197, 160, 89, 0.28);
+	color: rgba(255, 252, 241, 0.75);
+	font-size: 18px;
+	line-height: 1;
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	cursor: pointer;
+	z-index: 10;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+}
+#close-drink-popup:hover {
+	color: rgba(197, 160, 89, 0.9);
+	border-color: rgba(197, 160, 89, 0.5);
+}
+
+.drink-img-wrap {
+	position: relative;
+	width: 100%;
+	aspect-ratio: 4 / 5;
+	max-height: 52vh;
+	flex-shrink: 0;
+	overflow: hidden;
+}
+.drink-img-wrap img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+.drink-img-fade {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 55%;
+	background: linear-gradient(to bottom, transparent, #090C0F);
+	pointer-events: none;
+}
+
+.drink-info {
+	padding: 14px 20px 36px;
+	overflow-y: auto;
+	flex: 1;
+	-webkit-overflow-scrolling: touch;
+}
+
+.drink-category-badge {
+	display: inline-block;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 8.5px;
+	font-weight: 600;
+	letter-spacing: 3.5px;
+	text-transform: uppercase;
+	color: rgba(197, 160, 89, 0.65);
+	margin-bottom: 7px;
+}
+
+.drink-popup-name {
+	font-family: "Cormorant Garamond", serif;
+	font-size: 28px;
+	font-style: italic;
+	font-weight: 400;
+	color: rgba(255, 252, 241, 0.95);
+	margin: 0 0 4px;
+	line-height: 1.15;
+}
+
+.drink-popup-price {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 12.5px;
+	font-weight: 500;
+	color: rgba(197, 160, 89, 0.88);
+	letter-spacing: 1px;
+	margin: 0 0 14px;
+}
+
+.drink-divider {
+	width: 36px;
+	height: 1px;
+	background: linear-gradient(to right, rgba(197, 160, 89, 0.55), transparent);
+	margin-bottom: 13px;
+}
+
+.drink-popup-desc {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 11.5px;
+	font-weight: 300;
+	color: rgba(255, 252, 241, 0.6);
+	line-height: 1.75;
+	margin: 0 0 16px;
+}
+
+.drink-flavor-tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+	margin-bottom: 13px;
+}
+
+.drink-flavor-tag {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 9px;
+	font-weight: 600;
+	letter-spacing: 1.2px;
+	text-transform: uppercase;
+	color: rgba(197, 160, 89, 0.82);
+	border: 1px solid rgba(197, 160, 89, 0.28);
+	border-radius: 20px;
+	padding: 3px 11px;
+	background: rgba(197, 160, 89, 0.06);
+}
+
+.drink-flavor-profile {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 11px;
+	font-weight: 300;
+	font-style: italic;
+	color: rgba(255, 252, 241, 0.38);
+	line-height: 1.65;
+	margin: 0;
 }
