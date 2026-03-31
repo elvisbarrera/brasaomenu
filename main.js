@@ -709,6 +709,11 @@ const drinkData = {
 		profile: 'Pisco sour elevated with pineapple-serrano heat and a velvety egg white crown.'
 	},
 	// DESSERT
+	'Crème Brulee Martini': {
+		category: 'Dessert',
+		tags: ['Vanilla', 'Caramel', 'Creamy', 'Rich'],
+		profile: 'Licor 43 Crème Brulee, Vanilla Vodka, heavy cream and Mr. Black with caramel syrup, garnished with blueberries.'
+	},
 	'Carajillo': {
 		category: 'Dessert',
 		tags: ['Coffee', 'Sweet', 'Warm', 'Bold'],
