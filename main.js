@@ -760,7 +760,7 @@ function openDrinkPopup(card) {
 	const imgSrc = imgEl.getAttribute('src');
 
 	// Clean up rawName to match keys in drinkData despite exact HTML formatting
-	let lookupName = rawName.replace(/[\n\r]+/g, ' ').replace(/\s{2,}/g, ' ').replace(/\u00A0/g, ' ').replace('’', "'").trim();
+	let lookupName = rawName.replace(/[\n\r]+/g, ' ').replace(/\s{2,}/g, ' ').replace(/\u00A0/g, ' ').replace(/’/g, "'").trim();
 	if (lookupName.startsWith('Passion Fruit Margarita')) lookupName = 'Passion Fruit Margarita';
 
 	const data = drinkData[lookupName] || drinkData[rawName] || {};
