@@ -153,6 +153,37 @@ document.addEventListener('click', function (e) {
 })();
 
 
+// Spirit group item counts
+(function () {
+    function initSpiritCounts() {
+        let totalCocktails = 0;
+        document.querySelectorAll('.spirit-group, .cocktail-group').forEach(group => {
+            const title = group.querySelector('.spirit-title');
+            if (!title) return;
+            const count = group.querySelectorAll('.drink-container').length;
+            
+            if (group.closest('#cocktails')) {
+                totalCocktails += count;
+            }
+
+            const el = document.createElement('p');
+            el.className = 'spirit-item-count';
+            el.textContent = count + ' selections';
+            title.insertAdjacentElement('afterend', el);
+        });
+
+        const totalCocktailsEl = document.getElementById('total-cocktails-count');
+        if (totalCocktailsEl) {
+            totalCocktailsEl.textContent = totalCocktails + ' selections';
+        }
+    }
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initSpiritCounts);
+    } else {
+        initSpiritCounts();
+    }
+})();
+
 // POP UP
 function closePopup() {
 	const popup = document.getElementById('cocktail-popup');
@@ -365,6 +396,156 @@ const drinkData = {
 		tags: ['Bitter', 'Herbal', 'Sweet', 'Complex'],
 		profile: "Campari's bold bitterness balanced by gin botanicals and sweet vermouth."
 	},
+	'Bloody Mary': {
+		category: 'Classics',
+		tags: ['Savory', 'Spicy', 'Umami', 'Bold'],
+		profile: "Bold tomato and house-spiced blend with a vodka kick — the ultimate brunch companion."
+	},
+	'Boulevardier': {
+		category: 'Classics',
+		tags: ['Bitter', 'Whiskey', 'Herbal', 'Complex'],
+		profile: "A whiskey-forward cousin to the Negroni — rich, bittersweet, and deeply satisfying."
+	},
+	'Caipicoco': {
+		category: 'Classics',
+		tags: ['Tropical', 'Coconut', 'Citrus', 'Sweet'],
+		profile: "A creamy, tropical escape blending Brazil's classic Caipirinha with rich coconut flavors."
+	},
+	'Premium Caipirinha': {
+		category: 'Classics',
+		tags: ['Citrus', 'Sweet', 'Tropical', 'Premium'],
+		profile: "An elevated take on the Brazilian classic, featuring aged premium Cachaça and fresh hand-muddled lime."
+	},
+	'Cape Cod': {
+		category: 'Classics',
+		tags: ['Fruity', 'Tart', 'Crisp', 'Light'],
+		profile: "Clean, simple, and refreshing with crisp vodka and bright cranberry juice over ice."
+	},
+	'Chocolate Martini': {
+		category: 'Classics',
+		tags: ['Chocolate', 'Rich', 'Creamy', 'Sweet'],
+		profile: "Luxuriously smooth and decadent, combining silky vodka with rich dark chocolate."
+	},
+	'Cosmopolitan': {
+		category: 'Classics',
+		tags: ['Citrus', 'Fruity', 'Tart', 'Elegant'],
+		profile: "Effortlessly elegant and blushing pink, with citrus vodka, cranberry, and fresh lime."
+	},
+	'Daiquiri': {
+		category: 'Classics',
+		tags: ['Citrus', 'Sweet', 'Crisp', 'Classic'],
+		profile: "A timeless Caribbean classic of white rum, fresh lime, and cane sugar, perfectly shaken."
+	},
+	'Fitzgerald': {
+		category: 'Classics',
+		tags: ['Botanical', 'Citrus', 'Balanced', 'Crisp'],
+		profile: "Quiet sophistication with London dry gin, fresh lemon, and a subtle touch of bitters."
+	},
+	'Fumblin\' Dublin': {
+		category: 'Classics',
+		tags: ['Warm', 'Spiced', 'Sweet', 'Balanced'],
+		profile: "A cozy and warm sipper with Irish whiskey, honey, ginger, and fresh lemon."
+	},
+	'Gibson': {
+		category: 'Classics',
+		tags: ['Botanical', 'Dry', 'Savory', 'Elegant'],
+		profile: "A distinguished, savory twist on the classic martini, crowned with a cocktail onion."
+	},
+	'Godfather': {
+		category: 'Classics',
+		tags: ['Rich', 'Whiskey', 'Nutty', 'Sweet'],
+		profile: "Deep and satisfying with aged Scotch whisky rounded by smooth, sweet Amaretto."
+	},
+	'Godmother': {
+		category: 'Classics',
+		tags: ['Smooth', 'Nutty', 'Sweet', 'Refined'],
+		profile: "Effortlessly refined, blending premium vodka with velvety, sweet Amaretto."
+	},
+	'Highland Pear': {
+		category: 'Classics',
+		tags: ['Fruity', 'Floral', 'Smooth', 'Complex'],
+		profile: "Scotch whisky and elderflower paired with fresh pear and honey for a delicate, floral lift."
+	},
+	'Lemon Drop': {
+		category: 'Classics',
+		tags: ['Citrus', 'Tart', 'Sweet', 'Crisp'],
+		profile: "A perfect sweet-tart balance of premium vodka and fresh lemon, served with a sugar rim."
+	},
+	'Long Island Iced Tea': {
+		category: 'Classics',
+		tags: ['Bold', 'Complex', 'Citrus', 'Classic'],
+		profile: "A legendary, deceptively smooth mix of five spirits with sweet & sour and a splash of cola."
+	},
+	'Love in the Air': {
+		category: 'Classics',
+		tags: ['Floral', 'Fruity', 'Sweet', 'Delicate'],
+		profile: "A dreamy, delicate blend of premium vodka, rose liqueur, lychee, and elderflower."
+	},
+	'Manhattan': {
+		category: 'Classics',
+		tags: ['Whiskey', 'Bittersweet', 'Rich', 'Classic'],
+		profile: "Elegant perfection with rye or bourbon and sweet vermouth, garnished with a Luxardo cherry."
+	},
+	'Margarita': {
+		category: 'Classics',
+		tags: ['Citrus', 'Tart', 'Agave', 'Refreshing'],
+		profile: "The iconic blend of premium tequila, fresh lime, and triple sec, perfect on the rocks."
+	},
+	'Mexican Martini': {
+		category: 'Classics',
+		tags: ['Savory', 'Citrus', 'Agave', 'Bold'],
+		profile: "A Texas-born icon mixing the classic margarita with a savory splash of olive brine."
+	},
+	'Mimosa': {
+		category: 'Classics',
+		tags: ['Bubbly', 'Citrus', 'Light', 'Celebratory'],
+		profile: "Light and bright with chilled fresh orange juice and sparkling champagne."
+	},
+	'NY Sour': {
+		category: 'Classics',
+		tags: ['Whiskey', 'Tart', 'Fruity', 'Complex'],
+		profile: "Rye whiskey and fresh lemon crowned with a striking, dry red wine float."
+	},
+	'Piña Colada': {
+		category: 'Classics',
+		tags: ['Tropical', 'Coconut', 'Creamy', 'Sweet'],
+		profile: "A pure Caribbean escape in a glass, blending rum, rich coconut cream, and pineapple."
+	},
+	'Pisco Sour': {
+		category: 'Classics',
+		tags: ['Citrus', 'Silky', 'Frothy', 'Complex'],
+		profile: "Silky and frothy with Peruvian Pisco, fresh lime, and a beautiful egg white crown."
+	},
+	'Rusty Nail': {
+		category: 'Classics',
+		tags: ['Smoky', 'Herbal', 'Sweet', 'Warm'],
+		profile: "Warm and smooth, pairing aged Scotch whisky with the honeyed, herbal notes of Drambuie."
+	},
+	'Salty Dog': {
+		category: 'Classics',
+		tags: ['Citrus', 'Tart', 'Crisp', 'Refreshing'],
+		profile: "Bright and effortless with premium vodka and fresh grapefruit juice in a salt-rimmed glass."
+	},
+	'Sazerac': {
+		category: 'Classics',
+		tags: ['Whiskey', 'Herbal', 'Spiced', 'Ritual'],
+		profile: "A true ritual of rye whiskey and Peychaud's bitters in an absinthe-rinsed glass."
+	},
+	'Tom Collins': {
+		category: 'Classics',
+		tags: ['Botanical', 'Citrus', 'Bubbly', 'Refreshing'],
+		profile: "Tall, cool, and timelessly refreshing with London dry gin, lemon, and sparkling soda."
+	},
+	'Vesper': {
+		category: 'Classics',
+		tags: ['Botanical', 'Crisp', 'Complex', 'Dry'],
+		profile: "James Bond's iconic creation — precise, uncompromising, and perfectly chilled."
+	},
+	'White Russian': {
+		category: 'Classics',
+		tags: ['Coffee', 'Creamy', 'Sweet', 'Rich'],
+		profile: "Rich and indulgent, combining vodka and coffee liqueur stirred with fresh cream."
+	},
 	// SIGNATURE
 	'Watermelon Breeze': {
 		category: 'Signature',
@@ -573,7 +754,11 @@ function openDrinkPopup(card) {
 	const desc = descEl ? descEl.textContent.trim() : '';
 	const imgSrc = imgEl.getAttribute('src');
 
-	const data = drinkData[rawName] || {};
+	// Clean up rawName to match keys in drinkData despite exact HTML formatting
+	let lookupName = rawName.replace(/[\n\r]+/g, ' ').replace(/\s{2,}/g, ' ').replace(/\u00A0/g, ' ').replace('’', "'").trim();
+	if (lookupName.startsWith('Passion Fruit Margarita')) lookupName = 'Passion Fruit Margarita';
+
+	const data = drinkData[lookupName] || drinkData[rawName] || {};
 
 	document.getElementById('drink-popup-name').textContent = rawName;
 	document.getElementById('drink-popup-price').textContent = price;
