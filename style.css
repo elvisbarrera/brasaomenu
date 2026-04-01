@@ -395,6 +395,7 @@ h6 {
 	margin: -5px auto 30px;
 	width: 100%;
 	max-width: 290px;
+	position: relative;
 }
 
 .cocktail-images::after {
@@ -1417,6 +1418,24 @@ body {
 .cocktail-images::after {
 	opacity: 0.3;
 	width: 50%;
+}
+
+/* ── Cocktail Group Label Badge ── */
+.cocktail-group-label {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.6);
+	color: #ffffff;
+	font-size: 10px;
+	font-family: "Montserrat", sans-serif;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	padding: 3px 8px;
+	border-radius: 0 0 0 6px;
+	pointer-events: none;
+	z-index: 2;
 }
 
 /* h6 section sub-labels */

@@ -306,27 +306,27 @@ const drinkData = {
 		profile: 'A lively fusion of tropical rum, coffee-vanilla notes from Licor 43, and bright citrus.'
 	},
 	'Hibiscus Margarita': {
-		category: 'Seasonal',
+		category: 'Signature',
 		tags: ['Floral', 'Tart', 'Spicy', 'Vibrant'],
 		profile: 'Rose-forward florals balanced by tequila warmth and a gentle, lingering heat.'
 	},
 	"Dark 'N' Stormy": {
-		category: 'Seasonal',
+		category: 'Classics',
 		tags: ['Bold', 'Spicy', 'Warm', 'Deep'],
 		profile: 'Rich dark rum with fiery ginger and sharp lime — warming and invigorating.'
 	},
 	'Coquito': {
-		category: 'Seasonal',
+		category: 'Dessert',
 		tags: ['Creamy', 'Coconut', 'Spiced', 'Warm'],
 		profile: 'Silky holiday richness with cinnamon spice and deep rum warmth throughout.'
 	},
 	'Cranberry Mojito': {
-		category: 'Seasonal',
+		category: 'Signature',
 		tags: ['Tart', 'Minty', 'Citrus', 'Fresh'],
 		profile: 'Bright and herbaceous with tart cranberry, fresh mint, and smooth rum.'
 	},
 	'Autumn Pineapple': {
-		category: 'Seasonal',
+		category: 'Signature',
 		tags: ['Smoky', 'Sweet', 'Spiced', 'Tropical'],
 		profile: 'Grilled pineapple with cinnamon and honey — rich, golden, and perfectly autumnal.'
 	},
@@ -357,7 +357,7 @@ const drinkData = {
 		profile: 'Silky whiskey with cool crushed mint and lime brightness over pure crushed ice.'
 	},
 	'Bramble': {
-		category: 'Classics',
+		category: 'Signature',
 		tags: ['Fruity', 'Citrus', 'Sweet', 'Botanical'],
 		profile: 'Gin-forward with juicy blackberry depth and bright lemon — elegantly simple.'
 	},
@@ -382,7 +382,7 @@ const drinkData = {
 		profile: 'A perfect equal-parts balance of gin, green chartreuse, maraschino, and lime.'
 	},
 	'Smoked Old Fashioned': {
-		category: 'Classics',
+		category: 'Signature',
 		tags: ['Smoky', 'Whiskey', 'Bitters', 'Bold'],
 		profile: 'Classic old fashioned elevated with artisan wood smoke — dramatic and deeply aromatic.'
 	},
@@ -407,12 +407,12 @@ const drinkData = {
 		profile: "A whiskey-forward cousin to the Negroni — rich, bittersweet, and deeply satisfying."
 	},
 	'Caipicoco': {
-		category: 'Classics',
+		category: 'Signature',
 		tags: ['Tropical', 'Coconut', 'Citrus', 'Sweet'],
 		profile: "A creamy, tropical escape blending Brazil's classic Caipirinha with rich coconut flavors."
 	},
 	'Premium Caipirinha': {
-		category: 'Classics',
+		category: 'Signature',
 		tags: ['Citrus', 'Sweet', 'Tropical', 'Premium'],
 		profile: "An elevated take on the Brazilian classic, featuring aged premium Cachaça and fresh hand-muddled lime."
 	},
@@ -442,7 +442,7 @@ const drinkData = {
 		profile: "Quiet sophistication with London dry gin, fresh lemon, and a subtle touch of bitters."
 	},
 	'Fumblin\' Dublin': {
-		category: 'Classics',
+		category: 'Signature',
 		tags: ['Warm', 'Spiced', 'Sweet', 'Balanced'],
 		profile: "A cozy and warm sipper with Irish whiskey, honey, ginger, and fresh lemon."
 	},
@@ -477,7 +477,7 @@ const drinkData = {
 		profile: "A legendary, deceptively smooth mix of five spirits with sweet & sour and a splash of cola."
 	},
 	'Love in the Air': {
-		category: 'Classics',
+		category: 'Signature',
 		tags: ['Floral', 'Fruity', 'Sweet', 'Delicate'],
 		profile: "A dreamy, delicate blend of premium vodka, rose liqueur, lychee, and elderflower."
 	},
@@ -492,7 +492,7 @@ const drinkData = {
 		profile: "The iconic blend of premium tequila, fresh lime, and triple sec, perfect on the rocks."
 	},
 	'Mexican Martini': {
-		category: 'Classics',
+		category: 'Signature',
 		tags: ['Savory', 'Citrus', 'Agave', 'Bold'],
 		profile: "A Texas-born icon mixing the classic margarita with a savory splash of olive brine."
 	},
@@ -568,7 +568,7 @@ const drinkData = {
 		profile: 'Peachy vodka with lemon brightness lifted by prosecco bubbles.'
 	},
 	'Mojito': {
-		category: 'Signature',
+		category: 'Classics',
 		tags: ['Minty', 'Citrus', 'Refreshing', 'Crisp'],
 		profile: 'The quintessential refresher — bright mint, citrus, and rum in perfect harmony.'
 	},
@@ -588,12 +588,12 @@ const drinkData = {
 		profile: 'Pure tequila and citrus with agave sweetness — guilt-free and perfectly balanced.'
 	},
 	'Sangria': {
-		category: 'Signature',
+		category: 'Classics',
 		tags: ['Fruity', 'Wine', 'Sweet', 'Refreshing'],
 		profile: 'Wine-forward with tropical fruit, brandy warmth, and bright citrus finish.'
 	},
 	'Espresso Martini': {
-		category: 'Signature',
+		category: 'Classics',
 		tags: ['Coffee', 'Sweet', 'Bold', 'Creamy'],
 		profile: 'Rich espresso intensity with Licor 43 vanilla and Mr. Black coffee depth.'
 	},
@@ -603,7 +603,7 @@ const drinkData = {
 		profile: "Tequila's warmth meets cassis fruit and chili heat on a smoking crushed-ice finish."
 	},
 	'Pink Lady': {
-		category: 'Signature',
+		category: 'Classics',
 		tags: ['Floral', 'Berry', 'Citrus', 'Elegant'],
 		profile: 'Gin base with fresh berry muddling, champagne lift, and velvet falernum depth.'
 	},
@@ -633,7 +633,7 @@ const drinkData = {
 		profile: "Añejo's aged richness — vanilla and oak — lifted by orange and aromatic bitters."
 	},
 	'Pineapple Basil': {
-		category: 'Signature',
+		category: 'Classics',
 		tags: ['Tropical', 'Herbal', 'Sweet', 'Fruity'],
 		profile: 'Pineapple brightness with herbaceous basil and falernum spice — lively and fresh.'
 	},
@@ -679,7 +679,7 @@ const drinkData = {
 		profile: 'Kiwi-bright with berry contrast, falernum spice, and lime tartness.'
 	},
 	'Cucumber Martini': {
-		category: 'Infusions',
+		category: 'Signature',
 		tags: ['Crisp', 'Cool', 'Spicy', 'Clean'],
 		profile: 'Cucumber-infused vodka served straight up with a chili rim — refreshing with heat.'
 	},
@@ -924,3 +924,26 @@ document.getElementById('desserts').addEventListener('click', function (e) {
 	const card = e.target.closest('.dessert-card');
 	if (card) openDessertPopup(card);
 });
+
+
+// COCKTAIL GROUP LABELS
+(function () {
+    function initGroupLabels() {
+        document.querySelectorAll('#cocktails .cocktail-group').forEach(function (group) {
+            var groupName = group.dataset.group || '';
+            if (!groupName) return;
+            var label = groupName.charAt(0).toUpperCase() + groupName.slice(1);
+            group.querySelectorAll('.cocktail-images').forEach(function (imgEl) {
+                var span = document.createElement('span');
+                span.className = 'cocktail-group-label';
+                span.textContent = label;
+                imgEl.appendChild(span);
+            });
+        });
+    }
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initGroupLabels);
+    } else {
+        initGroupLabels();
+    }
+})();
