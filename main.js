@@ -431,7 +431,7 @@ const drinkData = {
 		tags: ['Citrus', 'Fruity', 'Tart', 'Elegant'],
 		profile: "Effortlessly elegant and blushing pink, with citrus vodka, cranberry, and fresh lime."
 	},
-	'Daiquiri': {
+	'Strawberry Daiquiri': {
 		category: 'Classics',
 		tags: ['Citrus', 'Sweet', 'Crisp', 'Classic'],
 		profile: "A timeless Caribbean classic of white rum, fresh lime, and cane sugar, perfectly shaken."
