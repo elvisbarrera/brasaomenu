@@ -69,86 +69,39 @@ document.addEventListener('click', function (e) {
 });
 
 
-// COCKTAIL CARD — INFO DOTS
+// COCKTAIL & DESSERT CARD — ZOOM ICON
 (function () {
-    var cardSelector = '#cocktails .cocktails-grid > .borderline, #cocktails .cocktails-grid > .cocktail-card, #desserts .cocktails-grid > .dessert-card';
+    var cocktailSelector = '#cocktails .cocktails-grid > .borderline, #cocktails .cocktails-grid > .cocktail-card';
+    var dessertSelector  = '#desserts .cocktails-grid > .dessert-card';
+    var svgIcon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>';
 
-    function initInfoDots() {
-        document.querySelectorAll(cardSelector).forEach(function (card) {
-            var descEl = card.querySelector('.drink-description') || card.querySelector('.cocktail-description');
-            if (!descEl) return;
-
-            var text = descEl.textContent.trim();
-            if (!text) return;
-
-            // Build slide-up overlay
-            var overlay = document.createElement('div');
-            overlay.className = 'info-overlay';
-            overlay.textContent = text;
-            card.appendChild(overlay);
-
-            // Build three-dot button
-            var btn = document.createElement('button');
-            btn.className = 'info-dots-btn';
-            btn.setAttribute('aria-label', 'More info');
-            btn.innerHTML = '<span></span><span></span><span></span>';
-            card.appendChild(btn);
-
-            btn.addEventListener('click', function (e) {
-                e.stopPropagation();
-                var isOpen = card.classList.contains('info-open');
-                // Close any other open card
-                document.querySelectorAll(cardSelector).forEach(function (c) {
-                    c.classList.remove('info-open');
-                    c.querySelector('.info-overlay') && (c.querySelector('.info-overlay').style.transform = '');
-                });
-                if (!isOpen) card.classList.add('info-open');
-            });
-
-            // Swipe down to dismiss
-            var touchStartY = 0;
-            var isDragging = false;
-
-            overlay.addEventListener('touchstart', function (e) {
-                touchStartY = e.touches[0].clientY;
-                isDragging = true;
-                overlay.style.transition = 'none';
-            }, { passive: true });
-
-            overlay.addEventListener('touchmove', function (e) {
-                if (!isDragging) return;
-                var delta = e.touches[0].clientY - touchStartY;
-                if (delta > 0) {
-                    overlay.style.transform = 'translateY(' + delta + 'px)';
-                }
-            }, { passive: true });
-
-            overlay.addEventListener('touchend', function (e) {
-                if (!isDragging) return;
-                isDragging = false;
-                overlay.style.transition = '';
-                var delta = e.changedTouches[0].clientY - touchStartY;
-                if (delta > 60) {
-                    card.classList.remove('info-open');
-                    overlay.style.transform = '';
-                } else {
-                    overlay.style.transform = '';
-                }
-            }, { passive: true });
+    function addZoom(card, openFn) {
+        var imgWrap = card.querySelector('.cocktail-images');
+        if (!imgWrap) return;
+        var btn = document.createElement('button');
+        btn.className = 'zoom-btn';
+        btn.setAttribute('aria-label', 'View details');
+        btn.innerHTML = svgIcon;
+        imgWrap.appendChild(btn);
+        btn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            openFn(card);
         });
+    }
 
-        // Tap outside closes
-        document.addEventListener('click', function () {
-            document.querySelectorAll(cardSelector).forEach(function (c) {
-                c.classList.remove('info-open');
-            });
+    function initZoomIcons() {
+        document.querySelectorAll(cocktailSelector).forEach(function (card) {
+            addZoom(card, openDrinkPopup);
+        });
+        document.querySelectorAll(dessertSelector).forEach(function (card) {
+            addZoom(card, openDessertPopup);
         });
     }
 
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initInfoDots);
+        document.addEventListener('DOMContentLoaded', initZoomIcons);
     } else {
-        initInfoDots();
+        initZoomIcons();
     }
 })();
 
@@ -346,6 +299,42 @@ const drinkData = {
 		category: 'Signature',
 		tags: ['Smoky', 'Sweet', 'Spiced', 'Tropical'],
 		profile: 'Grilled pineapple with cinnamon and honey — rich, golden, and perfectly autumnal.'
+	},
+	// SUMMER / SPRITZ
+	'Mangonada Margarita': {
+		category: 'Seasonal',
+		tags: ['Mango', 'Spicy', 'Citrus', 'Tropical'],
+		profile: 'Bold mango purée and tequila with a chamoy-tajín rim — sweet, tart, and fiery all at once.'
+	},
+	'Lavender Fog': {
+		category: 'Seasonal',
+		tags: ['Floral', 'Botanical', 'Citrus', 'Elegant'],
+		profile: 'Gin and Crème de Violette create a dreamy purple gradient — delicate lavender with a bright lemon finish.'
+	},
+	'Negroni Sbagliato': {
+		category: 'Spritz',
+		tags: ['Bittersweet', 'Bubbly', 'Herbal', 'Bold'],
+		profile: 'Campari and sweet vermouth topped with Prosecco — a softer, sparkling twist on the classic Negroni.'
+	},
+	'Aperol Corona Spritz': {
+		category: 'Spritz',
+		tags: ['Citrus', 'Refreshing', 'Light', 'Crisp'],
+		profile: 'Aperol and fresh lime with a full Corona — vibrant, salt-rimmed, and made for warm days.'
+	},
+	'Aperol Spritz': {
+		category: 'Spritz',
+		tags: ['Bittersweet', 'Bubbly', 'Light', 'Citrus'],
+		profile: 'The Italian icon — Aperol and Prosecco with sparkling water. Effortlessly refreshing and beautiful.'
+	},
+	'Hugo Spritz': {
+		category: 'Spritz',
+		tags: ['Floral', 'Minty', 'Bubbly', 'Aromatic'],
+		profile: 'St. Germain elderflower and Prosecco lifted by mint and lime — light, fragrant, and Alpine-fresh.'
+	},
+	'Limoncello Spritz': {
+		category: 'Spritz',
+		tags: ['Citrus', 'Bubbly', 'Sweet', 'Bright'],
+		profile: 'Limoncello and Prosecco with sparkling water — zesty, golden, and impossibly easy to sip.'
 	},
 	// CLASSICS
 	'Caipirinha (Cachaça Rum)': {
