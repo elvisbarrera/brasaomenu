@@ -556,12 +556,38 @@ h6 {
 }
 
 /* ── Popup Overlay ── */
+/* ── Summer Popup Animations ── */
+@keyframes popup-border-glow {
+	0%, 100% { box-shadow: 0 0 18px rgba(255, 185, 50, 0.35), 0 0 40px rgba(255, 140, 0, 0.15); }
+	50%       { box-shadow: 0 0 32px rgba(255, 200, 80, 0.55), 0 0 70px rgba(255, 160, 20, 0.28); }
+}
+
+@keyframes popup-shimmer {
+	0%   { background-position: -200% center; }
+	100% { background-position: 200% center; }
+}
+
+@keyframes popup-float-in {
+	0%   { opacity: 0; transform: translate(-50%, -42%) scale(0.94); }
+	100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+@keyframes sun-ray-spin {
+	from { transform: rotate(0deg); }
+	to   { transform: rotate(360deg); }
+}
+
+@keyframes label-fade-up {
+	0%   { opacity: 0; transform: translateY(6px); }
+	100% { opacity: 1; transform: translateY(0); }
+}
+
 #popup-overlay {
 	position: fixed;
 	inset: 0;
-	background: rgba(0, 0, 0, 0.85);
-	backdrop-filter: blur(4px);
-	-webkit-backdrop-filter: blur(4px);
+	background: rgba(30, 15, 0, 0.82);
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
 	z-index: 9998;
 	display: none;
 	opacity: 0;
@@ -581,19 +607,33 @@ h6 {
 	width: calc(100% - 40px);
 	max-width: 340px;
 	max-height: 88vh;
-	background: #090C0F;
-	border: 1px solid rgba(197, 160, 89, 0.4);
+	background: linear-gradient(175deg, #1c1005 0%, #231508 55%, #1a0e04 100%);
+	border: 1px solid rgba(255, 190, 60, 0.55);
 	z-index: 9999;
 	display: none;
 	flex-direction: column;
 	overflow: hidden;
 	opacity: 0;
-	transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+	transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 #cocktail-popup.popup-visible {
-	opacity: 1;
-	transform: translate(-50%, -50%);
+	animation: popup-float-in 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards,
+	           popup-border-glow 3s ease-in-out 0.55s infinite;
+}
+
+/* ── Warm top accent bar ── */
+#cocktail-popup::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 3px;
+	background: linear-gradient(90deg, #c97a00, #ffcc44, #ff9500, #ffdb6e, #c97a00);
+	background-size: 200% auto;
+	animation: popup-shimmer 3s linear infinite;
+	z-index: 10;
 }
 
 /* ── Image Block ── */
@@ -620,8 +660,8 @@ h6 {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	height: 60%;
-	background: linear-gradient(to bottom, transparent, #090C0F);
+	height: 65%;
+	background: linear-gradient(to bottom, transparent 0%, rgba(28, 16, 5, 0.6) 50%, #1c1005 100%);
 }
 
 /* ── Content Block ── */
@@ -637,11 +677,12 @@ h6 {
 .popup-label {
 	font-family: "Montserrat", sans-serif;
 	font-size: 10px;
-	font-weight: 600;
-	letter-spacing: 3px;
+	font-weight: 700;
+	letter-spacing: 3.5px;
 	text-transform: uppercase;
-	color: #C5A059;
+	color: #ffcc55;
 	margin: 0;
+	animation: label-fade-up 0.6s ease 0.7s both;
 }
 
 .popup-title {
@@ -650,8 +691,9 @@ h6 {
 	font-weight: 400;
 	line-height: 1.1;
 	letter-spacing: -0.5px;
-	color: #FFFCF1;
+	color: #FFF8E8;
 	margin: 0;
+	text-shadow: 0 2px 20px rgba(255, 170, 40, 0.25);
 }
 
 .popup-sub {
@@ -659,28 +701,31 @@ h6 {
 	font-size: 12px;
 	font-weight: 300;
 	line-height: 1.7;
-	color: #9a9ea3;
+	color: #c8aa78;
 	margin: 0;
 }
 
 #discover-menu {
-	margin-top: 6px;
+	margin-top: 8px;
 	padding: 13px 32px;
-	background-color: #C5A059;
-	color: #090C0F;
+	background: linear-gradient(90deg, #c97a00, #ffcc44, #ff9a00, #ffdb6e, #c97a00);
+	background-size: 200% auto;
+	animation: popup-shimmer 2.5s linear infinite;
+	color: #1c1005;
 	border: none;
 	font-family: "Montserrat", sans-serif;
 	font-size: 11px;
-	font-weight: 700;
+	font-weight: 800;
 	letter-spacing: 2.5px;
 	text-transform: uppercase;
 	cursor: pointer;
-	transition: background-color 0.2s ease, transform 0.2s ease;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+	box-shadow: 0 4px 20px rgba(255, 160, 0, 0.35);
 }
 
 #discover-menu:hover {
-	background-color: #d4b06a;
-	transform: scale(1.02);
+	transform: scale(1.04);
+	box-shadow: 0 6px 28px rgba(255, 180, 0, 0.55);
 }
 
 /* ── Close Button ── */
@@ -693,13 +738,18 @@ h6 {
 	font-size: 1.3rem;
 	line-height: 30px;
 	text-align: center;
-	color: #FFFCF1;
-	background: rgba(0, 0, 0, 0.45);
-	border: none;
+	color: #FFF8E8;
+	background: rgba(20, 10, 0, 0.55);
+	border: 1px solid rgba(255, 190, 60, 0.3);
 	border-radius: 50%;
 	cursor: pointer;
 	z-index: 100;
-	transition: background 0.2s ease;
+	transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+#close-popup:hover {
+	background: rgba(255, 160, 0, 0.2);
+	border-color: rgba(255, 190, 60, 0.7);
 }
 
 /* ══════════════════════════════════════
