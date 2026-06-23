@@ -214,7 +214,24 @@ document.getElementById('close-popup').addEventListener('click', closePopup);
 
 const discoverBtn = document.getElementById('discover-menu');
 if (discoverBtn) {
-	discoverBtn.addEventListener('click', closePopup);
+	discoverBtn.addEventListener('click', function () {
+		closePopup();
+
+		// Switch to the Cocktails tab
+		document.querySelectorAll('.tabContent').forEach(t => t.style.display = 'none');
+		document.querySelectorAll('.tabLinks').forEach(t => t.classList.remove('is-active'));
+		const cocktailsTab = document.getElementById('cocktails');
+		cocktailsTab.style.display = 'block';
+		const cocktailsLink = document.querySelector('.tabLinks[onclick*="cocktails"]');
+		if (cocktailsLink) cocktailsLink.classList.add('is-active');
+
+		// Ensure All filter is active (shows everything, Spritz first)
+		const allBtn = cocktailsTab.querySelector('.cocktail-filter-btn[data-filter="all"]');
+		if (allBtn) allBtn.click();
+
+		// Scroll to top of cocktails section
+		cocktailsTab.scrollIntoView({ behavior: 'smooth', block: 'start' });
+	});
 }
 
 document.getElementById('popup-overlay').addEventListener('click', closePopup);
