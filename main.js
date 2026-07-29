@@ -284,26 +284,42 @@ document.getElementById('review-overlay').addEventListener('click', closeReviewP
 // ── DRINK DETAIL POPUP ──
 
 const drinkData = {
+	// SPRITZ
+	'Negroni Sbagliato': {
+		category: 'Spritz',
+		tags: ['Bitter', 'Sweet', 'Bubbly', 'Classic'],
+		profile: 'A bubbly, bittersweet riff on the classic Negroni — Campari and sweet vermouth topped with Prosecco instead of gin.'
+	},
+	'Aperol Corona Spritz': {
+		category: 'Spritz',
+		tags: ['Vibrant', 'Refreshing', 'Citrus', 'Fusion'],
+		profile: 'A vibrant, refreshing fusion of Aperol and fresh lime with a full Corona Beer.'
+	},
+	'Aperol Spritz': {
+		category: 'Spritz',
+		tags: ['Bubbly', 'Citrus', 'Refreshing', 'Classic'],
+		profile: 'The Italian classic — Aperol and Prosecco topped with a splash of sparkling water, served over ice.'
+	},
+	'Hugo Spritz': {
+		category: 'Spritz',
+		tags: ['Light', 'Aromatic', 'Floral', 'Fresh'],
+		profile: 'Light and aromatic — St. Germain elderflower liqueur meets Prosecco and sparkling water.'
+	},
+	'Limoncello Spritz': {
+		category: 'Spritz',
+		tags: ['Bright', 'Citrus', 'Bubbly', 'Summer'],
+		profile: 'Bright and citrusy — Limoncello and Prosecco lifted with sparkling water, served with a lemon wheel.'
+	},
 	// SEASONAL
-	'Cutie Gold Caipirinha': {
+	'Mangonada Margarita': {
 		category: 'Seasonal',
-		tags: ['Citrus', 'Sweet', 'Refreshing', 'Bright'],
-		profile: 'Mandarin-forward with golden cachaça warmth. Light-bodied, crisp, and tropical.'
+		tags: ['Sweet', 'Spicy', 'Mango', 'Tropical'],
+		profile: 'A bold summer twist on the classic margarita — mango purée, tequila, and lime in a chamoy and tajín-rimmed glass.'
 	},
-	'Ube Horchata': {
+	'Lavender Fog': {
 		category: 'Seasonal',
-		tags: ['Creamy', 'Nutty', 'Earthy', 'Sweet'],
-		profile: 'Velvety and rich with a purple-hued earthy sweetness and smooth rum backbone.'
-	},
-	'Cucumber Matcharita': {
-		category: 'Seasonal',
-		tags: ['Earthy', 'Botanical', 'Crisp', 'Citrus'],
-		profile: 'Clean and energizing with an herbaceous matcha note and cool cucumber freshness.'
-	},
-	'Tiki 43': {
-		category: 'Seasonal',
-		tags: ['Tropical', 'Coffee', 'Citrus', 'Bold'],
-		profile: 'A lively fusion of tropical rum, coffee-vanilla notes from Licor 43, and bright citrus.'
+		tags: ['Floral', 'Gin', 'Lavender', 'Citrus'],
+		profile: 'An elegant, floral cocktail with gin, limoncello, lavender Monin, lemon juice, lavender bitters, and Crème de Violette.'
 	},
 	'Hibiscus Margarita': {
 		category: 'Signature',

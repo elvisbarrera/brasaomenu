@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(\"/Users/elvisbarrera/Documents/NEW WEBSITES:*)",
+      "Bash(cat -A \"/Users/elvisbarrera/Documents/NEW WEBSITES 2026/ALL LOCATIONS MENU \\(brasaomenu\\) MARCH 2026 - ACTIVE copy/index.html\")",
+      "Bash(wc -l \"/Users/elvisbarrera/Documents/NEW WEBSITES 2026/ALL LOCATIONS MENU \\(brasaomenu\\) MARCH 2026 - ACTIVE copy/index.html\")",
+      "WebFetch(domain:www.brasaousa.com)",
+      "WebFetch(domain:brasaousa.com)",
+      "Bash(sed -i '' '258s|src=\"\"./img/Bras.*Colors\\\\.png\"\"|src=\"\"./img/brasao-logo-colors.png\"\"|' index.html)",
+      "Bash(sed -n '258p' index.html)",
+      "Bash(sed -n '5027,5037p' index.html)",
+      "Bash(sed -n '5455,5465p' index.html)",
+      "Bash(sed -n '5902,5912p' index.html)",
+      "Bash(sed -n '6058,6068p' index.html)",
+      "Bash(sed -n '6302,6312p' index.html)",
+      "Bash(sed -n '578,592p' index.html)",
+      "Bash(sed -n '693,703p' index.html)",
+      "Bash(sed -n '820,830p' index.html)",
+      "Bash(sed -n '974,984p' index.html)",
+      "Bash(sed -n '1026,1036p' index.html)",
+      "Bash(cat -A \"/Users/elvisbarrera/Documents/NEW WEBSITES 2026/MAIN MENU \\(brasaomenu\\) 2026 - ACTIVE NOW/index.html\")",
+      "Bash(python3:*)",
+      "Bash(ls \"/Users/elvisbarrera/Documents/NEW WEBSITES 2026/MAIN MENU \\(brasaomenu\\) 2026 - ACTIVE NOW/2026-cocktails/\")"
+    ]
+  }
+}
