@@ -141,6 +141,7 @@ document.addEventListener('click', function (e) {
 function closePopup() {
 	const popup = document.getElementById('cocktail-popup');
 	const overlay = document.getElementById('popup-overlay');
+	if (!popup || !overlay) return;
 	popup.classList.remove('popup-visible');
 	overlay.classList.remove('overlay-visible');
 	setTimeout(() => {
@@ -152,6 +153,7 @@ function closePopup() {
 window.addEventListener('load', () => {
 	const popup = document.getElementById('cocktail-popup');
 	const overlay = document.getElementById('popup-overlay');
+	if (!popup || !overlay) return;
 
 	setTimeout(() => {
 		popup.style.display = 'flex';
@@ -163,7 +165,8 @@ window.addEventListener('load', () => {
 	}, 1800);
 });
 
-document.getElementById('close-popup').addEventListener('click', closePopup);
+const closePopupBtn = document.getElementById('close-popup');
+if (closePopupBtn) closePopupBtn.addEventListener('click', closePopup);
 
 const discoverBtn = document.getElementById('discover-menu');
 if (discoverBtn) {
@@ -187,7 +190,8 @@ if (discoverBtn) {
 	});
 }
 
-document.getElementById('popup-overlay').addEventListener('click', closePopup);
+const popupOverlayEl = document.getElementById('popup-overlay');
+if (popupOverlayEl) popupOverlayEl.addEventListener('click', closePopup);
 
 
 
