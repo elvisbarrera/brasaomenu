@@ -846,6 +846,80 @@ function closeDrinkPopup() {
 document.getElementById('close-drink-popup').addEventListener('click', closeDrinkPopup);
 document.getElementById('drink-overlay').addEventListener('click', closeDrinkPopup);
 
+// ── SWIPE DOWN TO CLOSE (touch devices) ──
+(function () {
+	const popup = document.getElementById('drink-popup');
+	const overlay = document.getElementById('drink-overlay');
+	const handle = document.getElementById('drink-popup-handle');
+	const imgWrap = popup.querySelector('.drink-img-wrap');
+	const scrollArea = popup.querySelector('.drink-info');
+
+	let startY = 0;
+	let deltaY = 0;
+	let dragging = false;
+	let popupHeight = 0;
+
+	function canStartDrag(target) {
+		if (handle && handle.contains(target)) return true;
+		if (imgWrap && imgWrap.contains(target)) return true;
+		if (scrollArea && scrollArea.contains(target) && scrollArea.scrollTop <= 0) return true;
+		return false;
+	}
+
+	popup.addEventListener('touchstart', function (e) {
+		if (!popup.classList.contains('drink-popup-visible')) return;
+		if (!canStartDrag(e.target)) return;
+		startY = e.touches[0].clientY;
+		deltaY = 0;
+		dragging = true;
+		popupHeight = popup.offsetHeight;
+		popup.style.transition = 'none';
+	}, { passive: true });
+
+	popup.addEventListener('touchmove', function (e) {
+		if (!dragging) return;
+		const rawDelta = e.touches[0].clientY - startY;
+		if (rawDelta <= 0) {
+			deltaY = 0;
+			popup.style.transform = 'translateX(-50%) translateY(0px)';
+			return;
+		}
+		deltaY = rawDelta;
+		popup.style.transform = 'translateX(-50%) translateY(' + deltaY + 'px)';
+		overlay.style.opacity = String(Math.max(0, 1 - deltaY / (popupHeight * 0.6)));
+		e.preventDefault();
+	}, { passive: false });
+
+	function endDrag() {
+		if (!dragging) return;
+		dragging = false;
+		popup.style.transition = '';
+
+		const shouldClose = deltaY > popupHeight * 0.28 || deltaY > 120;
+
+		if (shouldClose) {
+			popup.style.transform = 'translateX(-50%) translateY(100%)';
+			overlay.style.opacity = '0';
+			setTimeout(function () {
+				popup.classList.remove('drink-popup-visible');
+				overlay.classList.remove('drink-overlay-visible');
+				popup.style.display = 'none';
+				overlay.style.display = 'none';
+				popup.style.transform = '';
+				overlay.style.opacity = '';
+			}, 320);
+		} else {
+			popup.style.transform = 'translateX(-50%) translateY(0px)';
+			overlay.style.opacity = '';
+			setTimeout(function () { popup.style.transform = ''; }, 300);
+		}
+		deltaY = 0;
+	}
+
+	popup.addEventListener('touchend', endDrag);
+	popup.addEventListener('touchcancel', endDrag);
+})();
+
 document.getElementById('cocktails').addEventListener('click', function (e) {
 	const card = e.target.closest('.cocktails-grid .borderline, .cocktails-grid .cocktail-card');
 	if (card) openDrinkPopup(card);
