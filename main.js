@@ -178,7 +178,7 @@ if (discoverBtn) {
 		const cocktailsLink = document.querySelector('.tabLinks[onclick*="cocktails"]');
 		if (cocktailsLink) cocktailsLink.classList.add('is-active');
 
-		// Ensure All filter is active (shows everything, Spritz first)
+		// Ensure All filter is active (shows everything, Seasonal first)
 		const allBtn = cocktailsTab.querySelector('.cocktail-filter-btn[data-filter="all"]');
 		if (allBtn) allBtn.click();
 
