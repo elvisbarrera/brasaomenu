@@ -316,6 +316,21 @@ const drinkData = {
 		tags: ['Smoky', 'Sweet', 'Spiced', 'Tropical'],
 		profile: 'Grilled pineapple with cinnamon and honey — rich, golden, and perfectly autumnal.'
 	},
+	'Pistachio Martini': {
+		category: 'Seasonal',
+		tags: ['Nutty', 'Creamy', 'Sweet', 'Dessert'],
+		profile: 'Vanilla vodka, amaretto, and Baileys blended with pistachio extract and cream — smooth, nutty, and decadent.'
+	},
+	'Tiramisu Martini': {
+		category: 'Seasonal',
+		tags: ['Coffee', 'Creamy', 'Cocoa', 'Rich'],
+		profile: 'Vodka, coffee liqueur, and chocolate Licor 43 shaken with espresso and cream — a silky nod to the Italian classic.'
+	},
+	'Fig Side Car': {
+		category: 'Seasonal',
+		tags: ['Fruity', 'Warm', 'Rich', 'Elegant'],
+		profile: 'Hennessy cognac with rich fig syrup and a touch of lemon — warm, fruit-forward, and elegantly balanced.'
+	},
 	// SUMMER / SPRITZ
 	'Mangonada Margarita': {
 		category: 'Seasonal',
