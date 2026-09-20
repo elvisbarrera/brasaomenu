@@ -1,4 +1,4 @@
-const CACHE_NAME = 'brasao-menu-v8';
+const CACHE_NAME = 'brasao-menu-v9';
 
 const CORE_ASSETS = [
   './index.html',
